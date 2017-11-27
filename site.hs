@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
-import           Hakyll
-import           Text.Highlighting.Kate (styleToCss, pygments)
+import           Data.ByteString.UTF8   (toString)
+import           Data.Monoid            (mappend)
 import           Data.Yaml.YamlLight
-import           Data.ByteString.UTF8 (toString)
+import           Hakyll
+import           Text.Highlighting.Kate (pygments, styleToCss)
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -91,21 +91,18 @@ mkSiteCtx :: YamlLight -> Context String
 mkSiteCtx = mconcat . fmap mkSiteCtx' . getTerminalsKeys
   where
     mkSiteCtx' (val, [YStr key]) = constField (toString key) (toString val)
-    mkSiteCtx' _ = mempty
+    mkSiteCtx' _                 = mempty
 
 config :: Configuration
 config = defaultConfiguration
-    { deployCommand = "git checkout source" `mappend`
-                      "&& stack exec site rebuild" `mappend`
-                      "&& git checkout master" `mappend`
-                      "&& rsync -a --filter='P _site/'" `mappend`
-                      " --filter='P _cache/' --filter='P .git/'" `mappend`
-                      " --filter='P .stack-work' --filter='P .gitignore'" `mappend`
-                      " --filter='P .draft/'" `mappend`
-                      " --filter='P matsubara0507-ghpages.cabal'" `mappend`
-                      " --delete-excluded _site/ ." `mappend`
-                      "&& cp -a _site/. ." `mappend`
-                      "&& git add -A" `mappend`
-                      "&& git commit -m 'Publish'" `mappend`
-                      "&& git checkout source"
-    }
+  { deployCommand = mconcat
+      [ "cd .site"
+      , "&& rsync -a --filter='P .git/' --filter='P .gitignore'"
+      , " --delete-excluded ../_site/ ."
+      , "&& git checkout master"
+      , "&& git add -A"
+      , "&& git commit -m 'Publish'"
+      , "&& cd ../"
+      -- , "&& git submodule update"
+      ]
+  }
