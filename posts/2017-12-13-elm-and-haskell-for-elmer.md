@@ -635,7 +635,7 @@ fetchTodos =
     Http.send FetchTodos API.getTodos
 ```
 
-まず最初に ToDo タスクを全て取得してくる必要があるので，`http/localhost:8080/todos` を叩く HTTP リクエストを呼んでいる．
+まず最初に ToDo タスクを全て取得してくる必要があるので，`http://localhost:8080/todos` を叩く HTTP リクエストを呼んでいる．
 
 `view` 関数は泥臭くなるので割愛([コードを見てね](https://github.com/matsubara0507/haskell-and-elm/blob/unuse-extensible/elm-src/Main.elm#L50))．
 

@@ -277,7 +277,7 @@ notHidden = notP $ "hidden" @= ""
 ### JSON
 
 Haskell で JSON を扱うのは簡単．
-aeson というライブラリが，ほぼほぼデファクトスタンダードとなっている．
+[aeson](https://hackage.haskell.org/package/aeson-1.2.3.0) というライブラリが，ほぼほぼデファクトスタンダードとなっている．
 aeson は任意の型を `FromJSON` 型クラスや `ToJSON` 型クラスのインスタンスにしてあげるだけで，デコーダーとエンコーダーを実装してくれる．
 しかも，Generics という機能を使えば，一行で終わる．
 

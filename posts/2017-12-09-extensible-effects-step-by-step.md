@@ -27,7 +27,7 @@ Backpack の話の予定でしたが，先にこっちが書けたので[その�
 
 ## 概要
 
-上述した記事を参考にして，extensible effects によつモンドスタックをステップバイステップに構築してみる．
+上述した記事を参考にして，extensible effects によるモナドスタックをステップバイステップに構築してみる．
 最終的には， エラー処理(`Either`)，環境渡し(`Reader`)，状態(`State`)，ログ(`Writer`)，入出力(`IO`)といった機能をモナドスタックに積む．
 
 ちなみに，モナドトランスフォーマーと extensible effects を比較したりは基本的にしない．
@@ -412,7 +412,7 @@ ghci で実行すると次のようになる．
 
 さぁ最後は `IO` だ．
 実は `IO` の `Eff` 版は用意されていない．
-しかし，[`Data.Extensible.Effect.Data`](https://hackage.haskell.org/package/extensible-0.4.6/docs/Data-Extensible-Effect-Default.html) モジュールの中を見てみると，一番下の `Orphan instances` のところに `MonadIO` もある．
+しかし，[`Data.Extensible.Effect.Default`](https://hackage.haskell.org/package/extensible-0.4.6/docs/Data-Extensible-Effect-Default.html) モジュールの中を見てみると，一番下の `Orphan instances` のところに `MonadIO` もある．
 定義より，次のようにすれば，`MonadIO` のインスタンスとなり `liftIO` が使えるようになる．
 
 ```Haskell
