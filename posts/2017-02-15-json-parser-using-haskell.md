@@ -8,6 +8,9 @@ Haskell の Functional Parser ライブラリ，Parsec を使って，JSON Parse
 
 作ったコードのリポジトリは[ココ](https://github.com/matsubara0507/jsonparser)です．
 
+##### 追記(2018.02.14)
+GitHub にあった[テストスイート](https://github.com/nst/JSONTestSuite)を使ってテストを書いてみたらイロイロと JSON を勘違いしていたので大幅修正した．
+
 ## いきさつ
 
 名〇屋でやってる(数少ない FP な)勉強会，「[FP in Scala 読書会](https://fp-in-scala-nagoya.connpass.com/)」に6月ぐらいから参加している．
@@ -24,18 +27,18 @@ Haskell の Functional Parser ライブラリ，Parsec を使って，JSON Parse
 (関数型プログラミングの常套手段として)まずは型を用意する．
 
 ```Haskell
-type JSON = [(String, JValue)]  -- (1)
-data JValue = JNull             
-            | JNumber Double
-            | JString String
-            | JBool   Bool
-            | JArray  [JValue]
-            | JObject JSON      -- (2)
-            deriving (Show, Eq)
-```
+type JSON = JValue
+type Pair = (String, JValue)
 
-(1)のように，わざわざ型シノニムする必要は全くない((2)の `JSON` を置き換えればよい)が，頭の整理がつきやすかったので敢えて書いた．
-言語によっては連想配列を使っていると思うが，どーせ頭から順にパースした結果を突っ込むだけなので，解析中はリストで十分なはず．
+data JValue
+  = JNull
+  | JNumber Double
+  | JString String
+  | JBool   Bool
+  | JObject [Pair]
+  | JArray  [JValue]
+  deriving (Show, Eq)
+```
 
 数値に `Double` 型を使ってるのも気になるが，[FP in Scala](http://book.impress.co.jp/books/1114101091)でも `Double` 使ってるからこれでいいかな．
 
@@ -64,44 +67,70 @@ Scala と比べるとすごいシンプルに書けるよね．
 例えば
 
 ```Haskell
+import Text.Megaparsec (Parsec, between)
+import Text.Megaparsec.Char (string, space)
+
+type Parser = Parsec String String
+
 jsonParser :: Parser JSON
-jsonParser = objectParser
+jsonParser = token valueParser
 
-objectParser :: Parser JSON
-objectParser = between (string "{") (string "}") membersParser
+valueParser :: Parser JValue
+valueParser
+    = JString <$> stringParser
+  <|> JNumber <$> numberParser
+  <|> JObject <$> objectParser
+  <|> JArray  <$> arrayParser
+  <|> JBool   <$> boolParser
+  <|> const JNull <$> string "null"
 
-membersParser :: Parser JSON
-membersParser = undefined
+token :: Parser a -> Parser a
+token p = space *> p <* space
+
+stringParser :: Parser String
+stringParser = undefined
+
+numberParser :: Parser Double
+numberParser = undefined
+
+objectParser :: Parser [Pair]
+objectParser = undefined
+
+arrayParser :: Parser [JValue]
+arrayParser = undefined
+
+boolParser :: Parser Bool
+boolParser = undefined
 ```
 
-と書いて，コンパイルし，問題なければ
+と書いて，コンパイルし，問題なければ書きやすいところから少しずつ書いていく(書いてコンパイルを繰り返す)．
 
 
 ```Haskell
-membersParser :: Parser JSON
-membersParser = pairParser `sepBy` char ','
+symbol :: String -> Parser String
+symbol = token . string
 
-pairParser :: Parser (String, JValue)
-pairParser = undefined
+objectParser :: Parser [Pair]
+objectParser = between (symbol "{") (symbol "}") membersParser
+
+membersParser :: Parser [Pair]
+membersParser = undefined
 ```
-
-と次の階層へ降りていく．
-
-ちなみに `string`, `between`, `sepBy`, `char` は [megaparsec](https://hackage.haskell.org/package/megaparsec) というライブラリに標準である関数(もとい Parsec 系のライブラリにはだいたいある)．
-本当に便利．
 
 ### 工夫
 
 殆んどない．
 強いてあげるなら，Monad は使わずに Applicative だけで書いた．
 JSON は文脈自由文法なので bind (flatMap, do記法) は要らない(と FP in Scala には書いてあった)．
-
 その代わり，読みにくい関数もあるけどね．
 
-これとか
+これ(`pairParser`)とか
 
 ```Haskell
-pairParser :: Parser (String, JValue)
+membersParser :: Parser [Pair]
+membersParser = pairParser `sepBy` char ','
+
+pairParser :: Parser Pair
 pairParser = (,) <$> (token stringParser <* char ':') <*> token valueParser
 ```
 
