@@ -115,7 +115,7 @@ data Hoge = Hoge1 Int | Hoge2 Text
 type Hoge = Variant '[ "hoge1" >: Int, "hoge2" >: Text ]
 ```
 
-(正直あんまり利点が分かってないけど)拡縮はもちろん，[バリアントの操作関数をファイル分割して実装](/posts/2018-02-04-fun-of-extensible-2.html)もできる．
+(正直あんまり利点が分かってないけど)拡縮はもちろん，[バリアントの操作関数をファイル分割して実装](/posts/2018-01-31-fun-of-extensible-2.html)もできる．
 
 ### 拡張可能作用
 
@@ -131,7 +131,7 @@ type ServiceM = Eff
    ]
 ```
 
-基本的に[普通のモナドトランスフォーマーのように扱える](/post/2017-12-09-extensible-effects-step-by-step.html)．
+基本的に[普通のモナドトランスフォーマーのように扱える](/posts/2017-12-09-extensible-effects-step-by-step.html)．
 じゃぁ素直にモナドトランスフォーマー使えよって感じかもしれないけど気にしないで．
 
 ### `GetOpt` ラッパー
