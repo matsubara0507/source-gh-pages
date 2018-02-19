@@ -6,6 +6,7 @@ author:              MATSUBARA Nobutada
 category:            Web
 ghc-options:
   - -Wall
+  - -threaded
 dependencies:
   - base == 4.*
 
