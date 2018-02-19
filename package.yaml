@@ -17,7 +17,7 @@ executables:
       - -threaded
     dependencies:
       - hakyll
-      - highlighting-kate
+      - skylighting
       - yaml-light
       - utf8-string
 

@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.ByteString.UTF8   (toString)
-import           Data.Monoid            (mappend)
+import           Data.ByteString.UTF8 (toString)
+import           Data.Monoid          (mappend)
 import           Data.Yaml.YamlLight
 import           Hakyll
-import           Text.Highlighting.Kate (pygments, styleToCss)
+import           Skylighting          (pygments, styleToCss)
 
 --------------------------------------------------------------------------------
 main :: IO ()
