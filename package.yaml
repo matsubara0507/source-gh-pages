@@ -16,10 +16,10 @@ executables:
     ghc-options:
       - -threaded
     dependencies:
+      - containers
       - hakyll
       - skylighting
-      - yaml-light
-      - utf8-string
+      - yaml
 
 tests:
   check-links:

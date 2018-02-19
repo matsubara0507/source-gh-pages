@@ -1,16 +1,17 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.ByteString.UTF8 (toString)
-import           Data.Monoid          (mappend)
-import           Data.Yaml.YamlLight
+import           Data.Map    (Map, foldMapWithKey)
+import           Data.Monoid (mappend)
+import           Data.Yaml   (decodeFileEither)
 import           Hakyll
-import           Skylighting          (pygments, styleToCss)
+import           Skylighting (pygments, styleToCss)
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = do
-  configYaml <- parseYamlFile "config.yaml"
-  let siteCtx = mkSiteCtx configYaml
+  configYaml <- either (error . show) id <$> decodeFileEither "config.yaml"
+  let
+    siteCtx = mkSiteCtx configYaml
   hakyllWith config $ do
     match ("templates/*" .||. "includes/*") $ compile templateBodyCompiler
 
@@ -87,11 +88,10 @@ postCtx =
   dateField "date" "%b %-d, %Y" `mappend`
   defaultContext
 
-mkSiteCtx :: YamlLight -> Context String
-mkSiteCtx = mconcat . fmap mkSiteCtx' . getTerminalsKeys
-  where
-    mkSiteCtx' (val, [YStr key]) = constField (toString key) (toString val)
-    mkSiteCtx' _                 = mempty
+type Config = Map String String
+
+mkSiteCtx :: Config -> Context String
+mkSiteCtx = foldMapWithKey constField
 
 config :: Configuration
 config = defaultConfiguration
