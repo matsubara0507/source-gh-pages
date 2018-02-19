@@ -17,8 +17,10 @@ executables:
       - -threaded
     dependencies:
       - containers
+      - filepath
       - hakyll
       - skylighting
+      - time
       - yaml
 
 tests:
