@@ -1,4 +1,3 @@
---------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Map    (Map, foldMapWithKey)
 import           Data.Monoid (mappend)
@@ -6,7 +5,6 @@ import           Data.Yaml   (decodeFileEither)
 import           Hakyll
 import           Skylighting (pygments, styleToCss)
 
---------------------------------------------------------------------------------
 main :: IO ()
 main = do
   configYaml <- either (error . show) id <$> decodeFileEither "config.yaml"
@@ -72,16 +70,16 @@ main = do
             >>= relativizeUrls
 
     create ["sitemap.xml"] $ do
-         route idRoute
-         compile $ do
-           posts <- recentFirst =<< loadAll "posts/*"
-           let sitemapCtx =
-                 listField "entries" (postCtx `mappend` siteCtx) (return posts)
+        route idRoute
+        compile $ do
+          posts <- recentFirst =<< loadAll "posts/*"
+          let
+            sitemapCtx =
+              listField "entries" (postCtx `mappend` siteCtx) (return posts)
 
-           makeItem ""
+          makeItem []
             >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
 
---------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
   dateField "time" "%Y-%m-%d" `mappend`
