@@ -6,6 +6,7 @@ author:              MATSUBARA Nobutada
 category:            Web
 ghc-options:
   - -Wall
+  - -threaded
 dependencies:
   - base == 4.*
 
@@ -16,7 +17,7 @@ executables:
       - -threaded
     dependencies:
       - hakyll
-      - highlighting-kate
+      - skylighting
       - yaml-light
       - utf8-string
 
