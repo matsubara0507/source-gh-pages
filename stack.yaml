@@ -4,7 +4,9 @@ packages:
 - '.'
 
 extra-deps:
+- hakyll-4.11.0.0
 - HsSyck-0.53
+- pandoc-citeproc-0.13.0.1
 - yaml-light-0.1.4
 
 flags: {}
