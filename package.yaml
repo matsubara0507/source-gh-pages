@@ -9,6 +9,9 @@ ghc-options:
   - -threaded
 dependencies:
   - base == 4.*
+  - extensible
+  - extensible-instances
+  - lens
 
 executables:
   site:

@@ -1,15 +1,24 @@
+{-# LANGUAGE DataKinds         #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE OverloadedLabels  #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TupleSections     #-}
+{-# LANGUAGE TypeOperators     #-}
 
-import           Control.Monad   (liftM)
-import           Data.List       (sortBy)
-import           Data.Map        (Map, foldMapWithKey)
-import           Data.Ord        (comparing)
+import           Control.Lens                    hiding (Context)
+import           Data.Extensible                 hiding (item, match)
+import           Data.Extensible.Instances.Aeson ()
+import           Data.List                       (sortBy)
+import           Data.Map                        (Map, foldMapWithKey)
+import           Data.Ord                        (comparing)
+import           Data.Proxy                      (Proxy (..))
 import           Data.Time
-import           Data.Yaml       (decodeFileEither)
+import           Data.Yaml                       (decodeFileEither)
+import           GHC.TypeLits                    (KnownSymbol, symbolVal)
 import           Hakyll
-import           Skylighting     (pygments, styleToCss)
-import           System.FilePath (takeBaseName, takeDirectory, takeFileName)
+import           Skylighting                     (pygments, styleToCss)
+import           System.FilePath                 (takeBaseName, takeDirectory,
+                                                  takeFileName)
 
 main :: IO ()
 main = do
@@ -36,6 +45,7 @@ main = do
           gsubRoute "/[0-9]{4}/" ((++ "-") . init) `composeRoutes` setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" (postCtx `mappend` siteCtx)
             >>= relativizeUrls
 
@@ -64,7 +74,7 @@ main = do
     match "index.html" $ do
       route idRoute
       compile $ do
-        posts <- take 4 <$> (recentFirst' =<< loadAll "posts/*/*")
+        posts <- takeRecentFirst' 4 =<< loadAll "posts/*/*"
         let indexCtx =
               listField "posts" postCtx (return posts) `mappend`
               boolField "isIndex" (const True) `mappend`
@@ -87,11 +97,22 @@ main = do
           makeItem []
             >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
 
+    create ["feed.xml"] $ do
+        route idRoute
+        compile $ do
+          let
+            feedCtx = postCtx `mappend` bodyField "description"
+          posts <- takeRecentFirst' 10 =<< loadAllSnapshots "posts/**" "content"
+          renderAtom (mkFeedConfig configYaml) feedCtx posts
+
 postCtx :: Context String
-postCtx =
-  dateField' "time" "%Y-%m-%d" `mappend`
-  dateField' "date" "%b %-d, %Y" `mappend`
-  defaultContext
+postCtx = mconcat
+  [ dateField' "time" "%Y-%m-%d"
+  , dateField' "date" "%b %-d, %Y"
+  , dateField' "published" "%Y-%m-%dT%H:%M:%SZ"
+  , dateField' "updated" "%Y-%m-%dT%H:%M:%SZ"
+  , defaultContext
+  ]
 
 dateField' :: String -> String -> Context a
 dateField' key format = field key $ \item -> do
@@ -111,16 +132,50 @@ chronological' =
   sortByM $ getItemUTC' defaultTimeLocale . itemIdentifier
 
 recentFirst' :: MonadMetadata m => [Item a] -> m [Item a]
-recentFirst' = liftM reverse . chronological'
+recentFirst' = fmap reverse . chronological'
+
+takeRecentFirst' :: MonadMetadata m => Int -> [Item a] -> m [Item a]
+takeRecentFirst' n = fmap (take n) . recentFirst'
 
 sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
 sortByM f xs =
-  liftM (map fst . sortBy (comparing snd)) $ mapM (\x -> liftM (x,) (f x)) xs
+  map fst . sortBy (comparing snd) <$> mapM (\x -> fmap (x,) (f x)) xs
 
-type Config = Map String String
+type Config = Record
+  '[ "site_title" >: String
+   , "author" >: String
+   , "email" >: String
+   , "description" >: String
+   , "baseurl" >: String
+   , "val" >: Map String String
+   ]
+
+class ToContext a where
+  toContext :: String -> a -> Context String
+
+instance ToContext String where
+  toContext _ "" = mempty
+  toContext k v  = constField k v
+
+instance ToContext a => ToContext (Map String a) where
+  toContext _ = foldMapWithKey toContext
+
+instance ToContext a => ToContext (Identity a) where
+  toContext k = toContext k . runIdentity
 
 mkSiteCtx :: Config -> Context String
-mkSiteCtx = foldMapWithKey constField
+mkSiteCtx =
+  hfoldMapFor (Proxy :: Proxy (KeyValue KnownSymbol ToContext)) $
+    toContext <$> symbolVal . proxyAssocKey <*> getField
+
+mkFeedConfig :: Config -> FeedConfiguration
+mkFeedConfig conf = FeedConfiguration
+    { feedTitle       = conf ^. #site_title
+    , feedDescription = conf ^. #description
+    , feedAuthorName  = conf ^. #author
+    , feedAuthorEmail = conf ^. #email
+    , feedRoot        = conf ^. #baseurl
+    }
 
 config :: Configuration
 config = defaultConfiguration
