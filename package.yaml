@@ -20,6 +20,7 @@ executables:
     ghc-options:
       - -threaded
     dependencies:
+      - blaze-html
       - containers
       - filepath
       - hakyll

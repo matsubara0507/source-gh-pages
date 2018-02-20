@@ -46,7 +46,7 @@ body {
     height: 100%;
   width: 100%;
 
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, $grey-color 100%);   /* FF3.6+ */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, $grey-color 100%);   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,$grey-color)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,$grey-color 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, rgba(0,0,0,0.3) 0%,$grey-color 100%); /* Opera 11.10+ */
@@ -65,4 +65,20 @@ body {
 }
 .social h4 > a {
   color: #EF6C00;
+}
+
+.tags a {
+  align-items: center;
+  text-decoration: none;
+  background-color: #eee;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 80%;
+}
+
+.tags {
+  text-align: left;
+  padding-bottom: 30px;
 }
