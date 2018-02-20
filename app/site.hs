@@ -1,31 +1,20 @@
-{-# LANGUAGE DataKinds         #-}
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE OverloadedLabels  #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TupleSections     #-}
-{-# LANGUAGE TypeOperators     #-}
 
-import           Control.Lens                    hiding (Context)
-import           Data.Extensible                 hiding (item, match)
-import           Data.Extensible.Instances.Aeson ()
-import           Data.List                       (sortBy)
-import           Data.Map                        (Map, foldMapWithKey)
-import           Data.Ord                        (comparing)
-import           Data.Proxy                      (Proxy (..))
+import           Config
+import           Data.List       (sortBy)
+import           Data.Ord        (comparing)
 import           Data.Time
-import           Data.Yaml                       (decodeFileEither)
-import           GHC.TypeLits                    (KnownSymbol, symbolVal)
 import           Hakyll
-import           Skylighting                     (pygments, styleToCss)
-import           System.FilePath                 (takeBaseName, takeDirectory,
-                                                  takeFileName)
+import           Skylighting     (pygments, styleToCss)
+import           System.FilePath (takeBaseName, takeDirectory, takeFileName)
 
 main :: IO ()
 main = do
-  configYaml <- either (error . show) id <$> decodeFileEither "config.yaml"
+  config <- readConfig "config.yaml"
   let
-    siteCtx = mkSiteCtx configYaml
-  hakyllWith config $ do
+    siteCtx = mkSiteCtx config
+  hakyllWith cmdConfig $ do
     match ("templates/*" .||. "includes/*") $ compile templateBodyCompiler
 
     create ["css/highlight.css"] $ do
@@ -103,7 +92,7 @@ main = do
           let
             feedCtx = postCtx `mappend` bodyField "description"
           posts <- takeRecentFirst' 10 =<< loadAllSnapshots "posts/**" "content"
-          renderAtom (mkFeedConfig configYaml) feedCtx posts
+          renderAtom (mkFeedConfig config) feedCtx posts
 
 postCtx :: Context String
 postCtx = mconcat
@@ -141,44 +130,8 @@ sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
 sortByM f xs =
   map fst . sortBy (comparing snd) <$> mapM (\x -> fmap (x,) (f x)) xs
 
-type Config = Record
-  '[ "site_title" >: String
-   , "author" >: String
-   , "email" >: String
-   , "description" >: String
-   , "baseurl" >: String
-   , "val" >: Map String String
-   ]
-
-class ToContext a where
-  toContext :: String -> a -> Context String
-
-instance ToContext String where
-  toContext _ "" = mempty
-  toContext k v  = constField k v
-
-instance ToContext a => ToContext (Map String a) where
-  toContext _ = foldMapWithKey toContext
-
-instance ToContext a => ToContext (Identity a) where
-  toContext k = toContext k . runIdentity
-
-mkSiteCtx :: Config -> Context String
-mkSiteCtx =
-  hfoldMapFor (Proxy :: Proxy (KeyValue KnownSymbol ToContext)) $
-    toContext <$> symbolVal . proxyAssocKey <*> getField
-
-mkFeedConfig :: Config -> FeedConfiguration
-mkFeedConfig conf = FeedConfiguration
-    { feedTitle       = conf ^. #site_title
-    , feedDescription = conf ^. #description
-    , feedAuthorName  = conf ^. #author
-    , feedAuthorEmail = conf ^. #email
-    , feedRoot        = conf ^. #baseurl
-    }
-
-config :: Configuration
-config = defaultConfiguration
+cmdConfig :: Configuration
+cmdConfig = defaultConfiguration
   { deployCommand = mconcat
       [ "cd .site"
       , "&& rsync -a --filter='P .git/' --filter='P .gitignore'"
