@@ -1,5 +1,5 @@
 name:                matsubara0507-ghpages
-version:             0.2.0.1
+version:             0.3.0.0
 homepage:            https://matsubara0507.github.io
 license:             MIT
 author:              MATSUBARA Nobutada
@@ -9,17 +9,24 @@ ghc-options:
   - -threaded
 dependencies:
   - base == 4.*
+  - extensible
+  - extensible-instances
+  - lens
 
 executables:
   site:
+    source-dirs: app
     main: site.hs
     ghc-options:
       - -threaded
     dependencies:
+      - blaze-html
+      - containers
+      - filepath
       - hakyll
       - skylighting
-      - yaml-light
-      - utf8-string
+      - time
+      - yaml
 
 tests:
   check-links:

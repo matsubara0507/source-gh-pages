@@ -81,6 +81,21 @@ body {
 .social h4 > a {
   color: #EF6C00; }
 
+.tags a {
+  align-items: center;
+  text-decoration: none;
+  background-color: #eee;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 80%;
+  line-height: 30px; }
+
+.tags {
+  text-align: left;
+  padding-bottom: 30px; }
+
 .card-panel {
   transition: box-shadow .25s;
   padding: 20px;

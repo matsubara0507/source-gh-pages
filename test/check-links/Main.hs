@@ -22,18 +22,19 @@ main = do
     files <- ls "_site/posts"
     traverse (fmap scrapeLinks . readfile) files
   hspec . mapM_ spec . nub . sort $ filter check urls
-  where
-    check url = not . or . (:) (null url) $
-      fmap (`isPrefixOf` url) ["https://matsubara0507.github.io", "../", "#"]
-    spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
+ where
+  check url = not . or . (:) (null url) $ fmap
+    (`isPrefixOf` url)
+    ["https://matsubara0507.github.io", "../", "#"]
+  spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
 scrapeLinks :: Text -> [Text]
 scrapeLinks txt = fromMaybe [] $ scrapeStringLike txt scraper
-  where
-    scraper = attrs "href" "a"
+  where scraper = attrs "href" "a"
 
 linkStatus :: Text -> IO Status
 linkStatus url = do
   manager <- newManager tlsManagerSettings
   request <- parseRequest $ unpack url
-  responseStatus <$> httpNoBody (request {requestHeaders = [("User-Agent", "")]}) manager
+  responseStatus
+    <$> httpNoBody (request { requestHeaders = [("User-Agent", "")] }) manager

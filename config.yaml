@@ -1,6 +1,8 @@
-# Site settings
 site_title: ひげメモ
+author: MATSUBARA Nobutada
+email: ""
 description: "自分用のメモ書きだったり，イロイロといじって遊ぶようだったり"
 baseurl: "https://matsubara0507.github.io"
-github:  matsubara0507
-google_analytics: UA-86386380-1
+val:
+  github: matsubara0507
+  google_analytics: UA-86386380-1
