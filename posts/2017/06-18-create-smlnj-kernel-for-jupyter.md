@@ -1,6 +1,7 @@
 ---
 title: SML/NJ の Jupyter Kernel を作る
 thumbnail: /assets/create-smlnj-kernel-for-jupyter/ismlnj2.png
+tags: SML, JupyterNotebook
 ---
 
 「[純粋関数型データ構造](http://asciidwango.jp/post/160831986220/)」を読むために，[SML/NJ](http://www.smlnj.org/) の Jupyter Simple Kernel を作った話．

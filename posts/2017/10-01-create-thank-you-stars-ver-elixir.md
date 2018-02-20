@@ -1,5 +1,6 @@
 ---
 title: Elixir ライブラリにスターを送るツール thank-you-stars を作ってみました
+tags: Elixir, library
 ---
 
 五番煎じぐらいです．

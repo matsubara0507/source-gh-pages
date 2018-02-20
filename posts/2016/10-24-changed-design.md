@@ -1,5 +1,6 @@
 ---
 title: Hakyll で作った GitHub Pages のデザインを変更してみた
+tags: site, Haskell
 ---
 
 [Hakyll を使って自分の GitHub Pages を作った](/posts/2016-07-07-started-github-pages.html)が，デフォルトのデザインがあんまりカッコよくないので変更してみた．

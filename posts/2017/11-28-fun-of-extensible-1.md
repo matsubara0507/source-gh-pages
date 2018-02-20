@@ -1,5 +1,6 @@
 ---
 title: 拡張可能レコードでレコード型を拡縮する (Haskell)
+tags: Haskell, extensible-package
 ---
 
 「[`extensible`](https://hackage.haskell.org/package/extensible-0.4.6) パッケージの楽しみ その１」です．

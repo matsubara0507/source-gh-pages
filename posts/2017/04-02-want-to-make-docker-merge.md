@@ -1,6 +1,7 @@
 ---
 title: Dockerfileを並列に結ぶコマンドを作りたい(作った？)
 thumbnail: /assets/want-to-make-docker-merge/merge-layer.jpg
+tags: Docker, Haskell, application
 ---
 
 Docker コンテナは階層構造になっている．

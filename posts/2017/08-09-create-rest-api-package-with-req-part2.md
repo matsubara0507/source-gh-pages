@@ -1,5 +1,6 @@
 ---
 title: req を使って REST API Haskell パッケージを作る その２
+tags: Haskell, library
 ---
 
 こういう名前は正しくないかもしれないが，ここでは REST API パッケージ(ライブラリ)とは，既存の REST API を走査するための Haskell パッケージのことを指してる．

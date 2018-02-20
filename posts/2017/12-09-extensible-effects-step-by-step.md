@@ -1,5 +1,6 @@
 ---
 title: Extensible Effects ステップ・バイ・ステップ
+tags: Haskell, extensible-package
 ---
 
 [Haskell アドベントカレンダー (その１)](https://qiita.com/advent-calendar/2017/haskell)の9日目の記事です．

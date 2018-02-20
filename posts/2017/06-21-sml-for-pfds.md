@@ -1,5 +1,6 @@
 ---
 title: 「純粋関数型データ構造」を読み進めるための SML/NJ Tips
+tags: SML
 ---
 
 「[純粋関数型データ構造](http://asciidwango.jp/post/160831986220/)」を読んでる．

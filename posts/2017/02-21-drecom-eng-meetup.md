@@ -1,5 +1,6 @@
 ---
 title: ドリコムの「エンジニアMEETUP!!」に行ってきた
+tags: event
 ---
 
 ドリコムが企画した「[エンジニアMEETUP!!](https://drecom.connpass.com/event/50139/)」に参加してきたので内容のメモ．

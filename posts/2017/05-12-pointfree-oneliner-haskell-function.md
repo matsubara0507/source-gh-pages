@@ -1,5 +1,6 @@
 ---
 title: ポイントフリーワンライナー関数を作って遊んだ (Haskell)
+tags: Haskell
 ---
 
 一行でプログラムや関数を書くのを書く[ワンライナー](https://en.wikipedia.org/wiki/One-liner_program)(そのまんま)と言い、引数を取らない形で関数を書くのを[ポイントフリースタイル](https://wiki.haskell.org/Pointfree)という．

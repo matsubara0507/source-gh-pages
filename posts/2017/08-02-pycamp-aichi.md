@@ -1,6 +1,7 @@
 ---
 title: 「Python Boot Camp in 愛知」に TA で参加してきた
 thumbnail: /assets/pycamp-aichi/pycamp-aichi.jpg
+tags: event, Python
 ---
 
 7月29日(土) にあった「[Python Boot Camp in 愛知](https://pyconjp.connpass.com/event/60165/)」に TA として参加してきました．

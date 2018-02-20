@@ -1,5 +1,6 @@
 ---
 title: Haskell Backpack 覚え書き
+tags: Haskell, Backpack
 ---
 
 [Haskell アドベントカレンダー 2017 (その３)](https://qiita.com/advent-calendar/2017/haskell3) の12日目の記事です．

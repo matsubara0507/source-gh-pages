@@ -1,5 +1,6 @@
 ---
 title: Progate の全ての問題を解いた感想
+tags: event
 ---
 
 今回は小話．

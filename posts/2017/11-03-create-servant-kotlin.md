@@ -1,5 +1,6 @@
 ---
 title: Haskell の API 定義から Kotlin の関数を生成するライブラリを作った
+tags: Haskell, Kotlin, library
 ---
 
 [servant-kotlin](https://hackage.haskell.org/package/servant-kotlin) という Haskell パッケージを作った．

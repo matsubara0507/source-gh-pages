@@ -1,5 +1,6 @@
 ---
 title: このサイトを GHC8.2 の stackage resolver でビルドしてみた
+tags: site, Haskell
 ---
 
 このサイトは Haskell の静的サイトジェネレーター [Hakyll](https://hackage.haskell.org/package/hakyll) を使っており，古いパッケージ(Hakyll とは関係ない)を使ってた関係で，かなり古い LTS を使ってた(`lts-6.20`)．

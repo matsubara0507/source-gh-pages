@@ -1,5 +1,6 @@
 ---
 title: Creators Update 後の Windows 10 で Haskell (Stack)が動かないのを修正
+tags: Haskell
 ---
 
 久々に Haskell コードを手元のPC内でビルドしたら動かなかった(最近は Docker で遊んでたので)．

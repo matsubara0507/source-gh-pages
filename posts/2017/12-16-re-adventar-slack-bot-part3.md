@@ -1,6 +1,7 @@
 ---
 title: "Re: ゼロから作る ADVENTAR の Slack Bot (GAS 編)"
 thumbnail: /assets/re-adventar-slack-bot/run-with-gas.jpg
+tags: GoogleAppsScript, application, bot
 ---
 
 [IGGG アドベントカレンダー 2017](https://adventar.org/calendars/2300) の16日目の記事です．

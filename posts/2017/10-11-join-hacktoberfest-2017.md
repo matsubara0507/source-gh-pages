@@ -1,6 +1,7 @@
 ---
 title: Hacktoberfest 2017 なので PR を4つ以上出してみた
 thumbnail: /assets/join-hacktoberfest-2017/checker.jpg
+tags: event
 ---
 
 ##### 出しました(完)

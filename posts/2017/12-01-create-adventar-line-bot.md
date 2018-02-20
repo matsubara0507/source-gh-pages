@@ -1,6 +1,7 @@
 ---
 title: ADVENTAR の更新を通知する LINE Bot を作った
 thumbnail: /assets/adventar-line-bot/design.jpg
+tags: Haskell, application, scraping, bot
 ---
 
 思い付きで作った，某社の18新卒アドベントカレンダーの1日目の記事です(いきなり重めの記事でゴメンナサイ)．

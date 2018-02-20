@@ -1,5 +1,6 @@
 ---
 title: git challenge を終えて
+tags: event
 ---
 
 ![](/assets/after-the-git-challenge/until_write_blog.jpg)

@@ -1,5 +1,6 @@
 ---
 title: git challenge に向けて - git 備忘録
+tags: git
 ---
 
 ミクシィ主催の [git challenge というイベントの第5回](https://mixi-recruit.snar.jp/jobboard/detail.aspx?id=jcak-QWdFlI) に参加できるようになった．

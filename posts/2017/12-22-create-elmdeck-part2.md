@@ -1,6 +1,7 @@
 ---
 title: Elm でマークダウンプレゼンテーションエディタを作ってみた (その２)
 thumbnail: /assets/create-elmdeck/elmdeck-electron.jpg
+tags: Elm, application
 ---
 
 [Electron Advent Calendar 2017](https://qiita.com/advent-calendar/2017/electron) の22日目の記事です．

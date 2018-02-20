@@ -1,6 +1,7 @@
 ---
 title: Haskell で学ぶ Ruby (その１)
 thumbnail: /assets/learn-ruby-with-haskell/pc-has-rb.jpg
+tags: Haskell, Ruby
 ---
 
 ![](/assets/learn-ruby-with-haskell/pc-has-rb.jpg)

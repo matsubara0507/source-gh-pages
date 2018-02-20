@@ -1,6 +1,7 @@
 ---
 title: 「積み木の水槽」問題の Haskell での回答を読み解く
 thumbnail: /assets/water-towers-hs/water-tank.jpg
+tags: Haskell
 ---
 
 今朝，バイト先で[「積み木の水槽」問題](http://nabetani.sakura.ne.jp/hena/ord13blocktup/)の [Haskell での回答](https://rosettacode.org/wiki/Water_collected_between_towers#Haskell)について話題になりました．

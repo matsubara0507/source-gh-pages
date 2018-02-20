@@ -1,6 +1,7 @@
 ---
 title: Haskell × Elm のサンプルアプリケーションを書いてみた
 thumbnail: /assets/create-haskell-and-elm/sample.jpg
+tags: Haskell, Elm, application
 ---
 
 Haskell と Elm を使った Web アプリケーションのサンプルコードを書いてみたので，それについてイロイロとメモ書き．

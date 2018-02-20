@@ -1,6 +1,7 @@
 ---
 title: "Re: ゼロから作る ADVENTAR の Slack Bot (Haskell 編)"
 thumbnail: /assets/re-adventar-slack-bot/adventar-bot-0.jpg
+tags: Haskell, application, scraping, bot
 ---
 
 弊サークルはここ3年ほど [ADVENTAR](https://adventar.org) というサービスを利用してアドベントカレンダーをやっている．

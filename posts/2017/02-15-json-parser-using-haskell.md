@@ -1,5 +1,6 @@
 ---
 title: Haskell による JSON Parser
+tags: Haskell
 ---
 
 タイトルの通り．

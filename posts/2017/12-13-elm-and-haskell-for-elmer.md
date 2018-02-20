@@ -1,6 +1,7 @@
 ---
 title: Elm と Haskell で作る ToDo アプリ
 thumbnail: /assets/create-haskell-and-elm/sample.jpg
+tags: Haskell, Elm, application
 ---
 
 [Elm Advent Calendar 2017](https://qiita.com/advent-calendar/2017/elm) の13日目の記事です．

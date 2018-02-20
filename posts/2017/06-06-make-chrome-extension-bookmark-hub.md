@@ -1,6 +1,7 @@
 ---
 title: GitHub に Bookmark を送る Chrome 拡張を作ってみた
 thumbnail: "/assets/make-chrome-extension-bookmark-hub/bookmark-hub.jpg"
+tags: JavaScript, ChromeExtension
 ---
 
 Chrome 拡張を作ってみた．

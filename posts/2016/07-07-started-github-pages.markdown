@@ -1,5 +1,6 @@
 ---
 title: GitHub Pages はじめました
+tags: site, Haskell
 ---
 [Hakyll](https://jaspervdj.be/hakyll/) 使って [GitHub Pages](https://pages.github.com/) はじめました．
 

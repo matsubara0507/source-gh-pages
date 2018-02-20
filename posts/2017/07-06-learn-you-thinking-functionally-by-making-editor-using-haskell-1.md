@@ -1,5 +1,6 @@
 ---
 title: Haskellでエディターを作って学ぶ関数型プログラミングの思考法 その１
+tags: Haskell, application
 ---
 
 やることはタイトルの通りです．

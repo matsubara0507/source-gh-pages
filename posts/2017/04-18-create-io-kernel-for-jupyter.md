@@ -1,6 +1,7 @@
 ---
 title: Io 言語の Jupyter Kernel を作る with Docker
 thumbnail: /assets/create-io-kernel-for-jupyter/iio2.png
+tags: Iolang, JupyterNotebook
 ---
 
 [Docker](https://www.docker.com/) 使いながら，[Io](http://iolanguage.org/) 言語の [Jupyter](http://jupyter.org/) Kernel を作ったので，そのときのメモを書いておく．

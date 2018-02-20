@@ -1,6 +1,7 @@
 ---
 title: Introduction to Functional Programming in OCaml を終えて
 thumbnail: /assets/introduction-to-fp-in-ocaml/e_ocaml.jpg
+tags: OCaml
 ---
 
 [IGGG アドベントカレンダー 2016](http://www.adventar.org/calendars/1572) 7日目の記事です．

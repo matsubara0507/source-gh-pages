@@ -1,5 +1,6 @@
 ---
 title: 自己紹介ページを生成する whoami CLI を作った (Haskell)
+tags: Haskell, application, extensible-package
 ---
 
 [whoami](https://github.com/matsubara0507/whoami) という CLI を作りました．

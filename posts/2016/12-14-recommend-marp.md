@@ -1,6 +1,7 @@
 ---
 title: Marp のすゝめ
 thumbnail: "/assets/recommend-marp/editing_marp.jpg"
+tags: Marp
 ---
 
 [IGGG アドベントカレンダー 2016](http://www.adventar.org/calendars/1572) 14日目の記事です．

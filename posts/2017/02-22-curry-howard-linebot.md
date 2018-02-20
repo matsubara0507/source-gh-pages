@@ -1,5 +1,6 @@
 ---
 title: Haskell で LINE Bot を作った
+tags: Haskell, bot
 ---
 
 GitHub で **LINE Messaging API の [Haskell 版 SDK](https://github.com/noraesae/line) があった** ので作ってみた．

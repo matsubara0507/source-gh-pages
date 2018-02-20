@@ -1,5 +1,6 @@
 ---
 title: GitHub API を GAS でいい感じで叩くためのライブラリを作った (未完)
+tags: GoogleAppsScript, library
 ---
 
 Google Apps Script で [GitHub API](https://developer.github.com/v3/) を叩きたくなったが，ライブラリが見つからなかったので，作った。

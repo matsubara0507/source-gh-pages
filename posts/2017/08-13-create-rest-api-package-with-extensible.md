@@ -1,5 +1,6 @@
 ---
 title: extensible の拡張可能レコードを使って REST API Haskell パッケージを作る
+tags: Haskell, extensible-package, library
 ---
 
 [fumieval](https://github.com/fumieval) さんが作ってる [`extensible`](https://hackage.haskell.org/package/extensible) パッケージの拡張可能レコードを使って，[楽天のウェブサービスのAPI](https://webservice.rakuten.co.jp/document/)のための Haskell パッケージ [`rakuten`](https://github.com/matsubara0507/rakuten) というのを作ってるので，その簡単な紹介です．

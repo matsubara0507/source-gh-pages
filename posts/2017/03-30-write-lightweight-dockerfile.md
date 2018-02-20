@@ -1,5 +1,6 @@
 ---
 title: Dockerfile を軽量化する
+tags: Docker
 ---
 
 [前回](/posts/2017-03-27-seven-lang-on-docker.html)，7つの言語の処理系の入ったコンテナの [Dockerfile](https://github.com/matsubara0507/seven-languages-in-seven-weeks/blob/00d123ee180c6322a441180214a67574fe541eda/seven-lang-docker/Dockerfile) を書いた．

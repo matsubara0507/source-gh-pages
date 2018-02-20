@@ -1,5 +1,6 @@
 ---
 title: 拡張可能直和型を引数に取る関数の定義 (Haskell)
+tags: Haskell, extensible-package
 ---
 
 「[`extensible`](https://hackage.haskell.org/package/extensible) パッケージの楽しみ その２」です．

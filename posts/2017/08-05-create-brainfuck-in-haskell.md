@@ -1,5 +1,6 @@
 ---
 title: Haskell で書く Brainf*ck 処理系
+tags: Haskell, Brainfuck, application
 ---
 
 何番煎じだよって感じのネタですが，久々に Brainf*ck のコードを見かけたので，久々に書いてみたくなりました．

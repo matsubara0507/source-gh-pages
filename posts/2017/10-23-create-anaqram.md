@@ -1,6 +1,7 @@
 ---
 title: Elm × Haskell × Kotlin で Android + Web アプリケーションを作った
 thumbnail: /assets/create-anaqram/scoreboard.jpg
+tags: Haskell, Elm, Kotlin, application
 ---
 
 ちょっと珍しい組み合わせでアプリを作ったので，そのメモ．

@@ -1,5 +1,6 @@
 ---
 title: AdC の Haskell 記事を Haskell で集めた
+tags: Haskell, application, scraping
 ---
 
 昨年最後に，Haskell-jp へ以下の記事を寄稿しました．

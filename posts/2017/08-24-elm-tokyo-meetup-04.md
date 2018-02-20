@@ -1,6 +1,7 @@
 ---
 title: Elm Tokyo Meetup ＃4 に行ってきた
 thumbnail: /assets/elm-tokyo-meetup-04/elm-tokyo-meetup-04.jpg
+tags: event, Elm
 ---
 
 8月22日にあった [Elm Tokyo Meetup \#4](https://elm-tokyo.connpass.com/event/62355/) に行ってきました．

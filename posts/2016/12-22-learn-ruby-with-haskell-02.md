@@ -1,5 +1,6 @@
 ---
 title: Haskell で学ぶ Ruby (その２)
+tags: Haskell, Ruby
 ---
 
 [Qiita の言語実装 advent Calendar 2016](http://qiita.com/advent-calendar/2016/lang_dev) の21日目用の記事です．

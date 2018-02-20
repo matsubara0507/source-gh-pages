@@ -1,6 +1,7 @@
 ---
 title: IHaskell on Docker on Arukas
 thumbnail: /assets/ihaskell-arukas/local.jpg
+tags: Docker, Haskell
 ---
 
 [IGGG アドベントカレンダー 2016](http://www.adventar.org/calendars/1572) 6日目の記事です．

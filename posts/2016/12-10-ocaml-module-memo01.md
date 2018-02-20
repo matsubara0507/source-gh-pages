@@ -1,5 +1,6 @@
 ---
 title: OCaml のモジュールについてのメモ その１
+tags: OCaml
 ---
 
 FUN の [Introduction to Functional Programming in OCaml](https://www.fun-mooc.fr/courses/parisdiderot/56002S02/session02/About_this_course/) を受講し終えて，一番面白かったモジュールシステムについてイロイロ調べてみた．

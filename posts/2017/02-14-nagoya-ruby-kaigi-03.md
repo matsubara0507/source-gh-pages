@@ -1,6 +1,7 @@
 ---
 title: 名古屋紅玉会議零参 に行ってきた
 thumbnail: /assets/nagoya-ruby-kaigi-03/osuengeizyo.jpg
+tags: event, Ruby
 ---
 
 2月11日(土)にあった名古屋 Ruby 会議のことです．

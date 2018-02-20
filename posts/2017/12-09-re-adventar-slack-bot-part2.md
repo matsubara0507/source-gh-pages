@@ -1,6 +1,7 @@
 ---
 title: "Re: ゼロから作る ADVENTAR の Slack Bot (CircleCI 編)"
 thumbnail: /assets/re-adventar-slack-bot/run-on-circleci.jpg
+tags: CircleCI, application, bot
 ---
 
 ドーモ CircleCI でなんでもするマンです．
