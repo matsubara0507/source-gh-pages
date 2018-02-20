@@ -15,6 +15,7 @@ dependencies:
 
 executables:
   site:
+    source-dirs: app
     main: site.hs
     ghc-options:
       - -threaded
