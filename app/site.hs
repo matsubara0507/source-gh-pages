@@ -1,16 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import           Config
-import           Data.List                   (intersperse, sortBy)
-import           Data.Monoid                 ((<>))
-import           Data.Ord                    (comparing)
-import           Data.Time
-import           Hakyll
-import           Skylighting                 (pygments, styleToCss)
+import           Data.Monoid     ((<>))
+import           Hakyll          hiding (dateFieldWith)
+import           Hakyll.Ext
+import           Skylighting     (pygments, styleToCss)
 import           System.FilePath
-import           Text.Blaze.Html             (toHtml, toValue, (!))
-import qualified Text.Blaze.Html5            as H
-import qualified Text.Blaze.Html5.Attributes as A
 
 main :: IO ()
 main = do
@@ -130,41 +125,27 @@ postCtx tags = mconcat
   , defaultContext
   ]
 
-dateField' :: String -> String -> Context a
-dateField' key format = field key $ \item -> do
-  time <- getItemUTC' defaultTimeLocale $ itemIdentifier item
-  return $ formatTime defaultTimeLocale format time
-
-getItemUTC' :: MonadMetadata m => TimeLocale -> Identifier -> m UTCTime
-getItemUTC' locale ident = pure
-  $ parseTimeOrError True locale "%Y%m-%d" (yyyy ++ mmdd)
+toDate :: Identifier -> String
+toDate ident = yyyy ++ "-" ++ mmdd
  where
   path = toFilePath ident
   yyyy = takeFileName $ takeDirectory path
   mmdd = take 5 $ takeBaseName path
 
-chronological' :: MonadMetadata m => [Item a] -> m [Item a]
-chronological' = sortByM $ getItemUTC' defaultTimeLocale . itemIdentifier
+dateField' :: String -> String -> Context a
+dateField' = dateFieldWith toDate
 
 recentFirst' :: MonadMetadata m => [Item a] -> m [Item a]
-recentFirst' = fmap reverse . chronological'
+recentFirst' = recentFirstWith toDate
 
 takeRecentFirst' :: MonadMetadata m => Int -> [Item a] -> m [Item a]
 takeRecentFirst' n = fmap (take n) . recentFirst'
 
 sortRecentFirst' :: MonadMetadata m => [Identifier] -> m [Identifier]
-sortRecentFirst' =
-  fmap (fmap itemIdentifier) . recentFirst' . fmap (flip Item ())
+sortRecentFirst' = sortRecentFirstWith toDate
 
 tagsField' :: String -> Tags -> Context a
-tagsField' = tagsFieldWith getTags simpleRenderLink (mconcat . intersperse " ")
-
-sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
-sortByM f = fmap (map fst . sortBy (comparing snd)) . mapM (fmap <$> (,) <*> f)
-
-simpleRenderLink :: String -> (Maybe FilePath) -> Maybe H.Html
-simpleRenderLink tag =
-  fmap (\path -> H.a ! A.href (toValue $ toUrl path) $ toHtml tag)
+tagsField' = tagsFieldWithSep " "
 
 cmdConfig :: Configuration
 cmdConfig = defaultConfiguration
