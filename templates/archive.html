@@ -16,4 +16,17 @@
       $partial("templates/post-list.html")$
 
     </div>
+    <div class="pagination">
+      $if(previousPageUrl)$
+        <span class="prevPage">
+          <a href="$previousPageUrl$" class="btn">&lt;</a>
+        </span>
+      $endif$
+      $if(nextPageUrl)$
+        <span class="nextPage">
+          <a href="$nextPageUrl$" class="btn">&gt;</a>
+        </span>
+      $endif$
+      </span>
+    </div>
  </div>

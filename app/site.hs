@@ -7,7 +7,7 @@ import           Data.Ord        (comparing)
 import           Data.Time
 import           Hakyll
 import           Skylighting     (pygments, styleToCss)
-import           System.FilePath (takeBaseName, takeDirectory, takeFileName)
+import           System.FilePath
 
 main :: IO ()
 main = do
@@ -47,13 +47,19 @@ main = do
         >>= loadAndApplyTemplate "templates/default.html" siteCtx'
         >>= relativizeUrls
 
-    create ["archive.html"] $ do
+    archive <- buildPaginateWith
+      (fmap (paginateEvery 10) . sortRecentFirst')
+      "posts/*/*"
+      (fromFilePath . ("archive/" ++) . (<.> "html") . show)
+
+    paginateRules archive $ \pageNum pattern -> do
       route idRoute
       compile $ do
-        posts <- recentFirst' =<< loadAll "posts/*/*"
+        posts <- recentFirst' =<< loadAll pattern
         let archiveCtx = mconcat
-              [ listField "posts" postCtx (return posts)
-              , constField "title" "Archives"
+              [ constField "title" "Archives"
+              , listField "posts" postCtx (return posts)
+              , paginateContext archive pageNum
               , siteCtx
               , defaultContext
               ]
@@ -122,6 +128,10 @@ recentFirst' = fmap reverse . chronological'
 
 takeRecentFirst' :: MonadMetadata m => Int -> [Item a] -> m [Item a]
 takeRecentFirst' n = fmap (take n) . recentFirst'
+
+sortRecentFirst' :: MonadMetadata m => [Identifier] -> m [Identifier]
+sortRecentFirst' =
+  fmap (fmap itemIdentifier) . recentFirst' . fmap (flip Item ())
 
 sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
 sortByM f = fmap (map fst . sortBy (comparing snd)) . mapM (fmap <$> (,) <*> f)
