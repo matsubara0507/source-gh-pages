@@ -206,7 +206,7 @@ main = do
 
 ## 実行
 
-試しに，[Wikipedia にある HelloWorld プログラム](https://ja.wikipedia.org/wiki/Hello_world%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E4%B8%80%E8%A6%A7#Brainfuck)を実行してみる．
+試しに，~~Wikipedia にある~~(Wikipeia の「Hello worldプログラムの一覧」のページが無くなってた...orz) HelloWorld プログラムを実行してみる．
 
 ```bash
 $ cat hw.bf

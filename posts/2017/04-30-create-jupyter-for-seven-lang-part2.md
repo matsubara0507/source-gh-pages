@@ -4,7 +4,7 @@ thumbnail: /assets/create-jupyter-for-seven-lang/jupyter7.jpg
 tags: JupyterNotebook
 ---
 
-「[7つの言語、7つの世界](https://estore.ohmsha.co.jp/titles/978427406857P)」という書籍の演習問題をやるために，それらの言語の Jupyter Kernel の入った Jupyter Notebook を作っている．
+「[7つの言語、7つの世界](https://www.ohmsha.co.jp/book/9784274068577/)」という書籍の演習問題をやるために，それらの言語の Jupyter Kernel の入った Jupyter Notebook を作っている．
 
 長くなりそうだったので2回に分けて，今回は後半戦．
 

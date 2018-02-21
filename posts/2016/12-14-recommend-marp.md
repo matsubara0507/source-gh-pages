@@ -20,7 +20,7 @@ Marp はマークダウン記法のファイルからスライドを生成して
 
 ソースコードは全て [GitHub で公開](https://github.com/yhatt/marp)されており，MIT ライセンスのため，自由に改良して使うことができるはずです．
 
-開発経緯等は作者 [yhatt さんのブログ](http://technica-blog.jp/entry/2016/07/14/204951)にまとめられているので，そちらを参照してください．
+開発経緯等は作者 [yhatt さんの Qiita 記事](https://qiita.com/yhatt/items/0bf65699a538d5508c33)にまとめられているので，そちらを参照してください．
 
 ![](/assets/recommend-marp/editing_marp.jpg)
 

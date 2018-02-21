@@ -8,7 +8,7 @@ tags: git
 [git](https://git-scm.com/) は普段から使っているが，基本的に [Atlassian](https://ja.atlassian.com/) の [SourceTree](https://ja.atlassian.com/software/sourcetree) を使ってポチポチしてるだけであり，知識は必要に応じてググったものしかない．
 ということで，とても良い機会なので本を一冊読んで，一から丁寧に学んでみることにした．
 
-今回読んだのは，「[Gitによるバージョン管理](https://estore.ohmsha.co.jp/titles/978427406864P)」という書籍．
+今回読んだのは，「[Gitによるバージョン管理](https://www.ohmsha.co.jp/book/9784274068645/)」という書籍．
 年末に大学の理工書店に行ったときに，あったものから適当に選んで買った．
 なんか初級者向けでは無いらしいので，面白いかなぁと．
 
