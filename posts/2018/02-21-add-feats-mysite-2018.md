@@ -101,7 +101,7 @@ HTTPクライアントには [`http-client`](https://hackage.haskell.org/package
 - [travis-ci の初回ビルドで OUT OF MEMORY が出た時の対処法](https://haskell.e-bigmoon.com/posts/2017-12-31-travis-out-of-memory.html)
 
 戦犯は `Cabal` パッケージなので，こいつだけ先に `-j 1` オプション(メモリを節約するが速度が遅い)でビルドしてしまうという戦略．
-この記事のサイトの [`.travis.yml`](https://github.com/e-bigmoon/haskell-blog/blob/a229f118f121e0ad843faae1412e938e3e4f3a6b/.travis.yml) を ~コピペ~ 参考にして次のようにした
+この記事のサイトの [`.travis.yml`](https://github.com/e-bigmoon/haskell-blog/blob/a229f118f121e0ad843faae1412e938e3e4f3a6b/.travis.yml) を ~~コピペ~~ 参考にして次のようにした
 
 ```yaml
 install:
@@ -130,7 +130,7 @@ OUT OF MEMORY は突破したが...
 ```
 
 なぜだ...
-最新の [`hakyll-4.11` では直ってるみたい](https://github.com/jaspervdj/hakyll/commit/480da307d22aff8ab3817d1586710c5f4ff6d779)なので，`stack.yaml` に追加したラ上手くいった．
+最新の [`hakyll-4.11` では直ってるみたい](https://github.com/jaspervdj/hakyll/commit/480da307d22aff8ab3817d1586710c5f4ff6d779)なので，`stack.yaml` に追加したら上手くいった．
 
 ```yaml
 extra-deps:
@@ -207,7 +207,7 @@ main = do
 
 ##
 
-さて実はもう一つ問題があって，Haskyll は日時を表すテンプレート変数(`$date$` とか)を次のようン取得する．
+さて実はもう一つ問題があって，Hakyll は日時を表すテンプレート変数(`$date$` とか)を次のように取得する．
 
 ```Haskell
 postCtx :: Context String
