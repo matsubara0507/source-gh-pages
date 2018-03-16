@@ -18,6 +18,9 @@ extra-deps:
 - hslua-module-text-0.1.2.1
 - rfc5051-0.1.0.3
 - skylighting-0.6
+- shelly-1.7.1
+- enclosed-exceptions-1.0.2
+- system-fileio-0.3.16.3
 
 flags: {}
 
