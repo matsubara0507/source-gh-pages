@@ -6,13 +6,12 @@
 
 module Config where
 
-import           Control.Lens                    hiding (Context)
+import           Control.Lens    hiding (Context)
 import           Data.Extensible
-import           Data.Extensible.Instances.Aeson ()
-import           Data.Map                        (Map, foldMapWithKey)
-import           Data.Proxy                      (Proxy (..))
-import           Data.Yaml                       (decodeFileEither)
-import           GHC.TypeLits                    (KnownSymbol, symbolVal)
+import           Data.Map        (Map, foldMapWithKey)
+import           Data.Proxy      (Proxy (..))
+import           Data.Yaml       (decodeFileEither)
+import           GHC.TypeLits    (KnownSymbol, symbolVal)
 import           Hakyll
 
 readConfig :: FilePath -> IO Config
