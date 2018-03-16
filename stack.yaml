@@ -1,11 +1,23 @@
-resolver: lts-10.9
+resolver: nightly-2018-03-16
+# resolver: lts-10.9
 
 packages:
 - '.'
 
 extra-deps:
-- hakyll-4.11.0.0
-- pandoc-citeproc-0.13.0.1
+- hakyll-4.12.0.1
+- git: https://github.com/matsubara0507/pandoc.git
+  commit: a087746158287d393091794e429894f5a2cd3ee2
+- git: https://github.com/matsubara0507/pandoc-citeproc.git
+  commit: 32312e11b95601d839bea3dc34cd40a400a3710f
+- fsnotify-0.2.1.1
+# - pandoc-2.1.2
+# - pandoc-citeproc-0.14.1.5
+- cmark-gfm-0.1.3
+- haddock-library-1.5.0.1
+- hslua-module-text-0.1.2.1
+- rfc5051-0.1.0.3
+- skylighting-0.6
 
 flags: {}
 
