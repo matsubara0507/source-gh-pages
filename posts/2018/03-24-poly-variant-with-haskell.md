@@ -13,6 +13,10 @@ tags: Haskell, extensible-package
 これらの記事は OCaml で多相バリアントの紹介をしています．
 ということで，同様の議論を Haskell でもしてみた！というのが，この記事の内容です．
 
+##
+
+(2018.04.13 追記アリ)
+
 ### Haskell と多相バリアント
 
 悲しいことに，Haskell には組み込みで多相バリアントは無い(バリアントとは Haskell の代数的データ型における直和型と概ね一緒)．
@@ -167,7 +171,11 @@ shrink :: (xs ⊆ ys) => Record ys -> Record xs
 spread :: (xs ⊆ ys) => Variant xs -> Variant ys
 ```
 
-拡縮する関数 `spread` や `shrink` は強力なのだが，多相的すぎて前後の型が分からないとエラーになる(気がする(パッケージの作者じゃないので細かいことはよくわからん))ので，型注釈 (`spread xs :: Hoge` の部分)を与える必要がある．
+~~拡縮する関数 `spread` や `shrink` は強力なのだが，多相的すぎて前後の型が分からないとエラーになる(気がする(パッケージの作者じゃないので細かいことはよくわからん))ので，型注釈 (`spread xs :: Hoge` の部分)を与える必要がある．~~
+
+(2018.04.13 追記)
+`spread` や `shrink` の代わりに `shrinkAssoc` や `spreadAssoc` を使えば値が多相でもうまく扱えるとのコトを[作者様よりコメント](https://www.reddit.com/r/haskell_jp/comments/86rx9b/多相バリアントを使いこなそう_with_haskell/dwaq3cw/)いただいた．
+感謝．
 
 ### 必殺 Coinclusion
 
