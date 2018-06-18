@@ -1,9 +1,9 @@
 ---
-title: "Earlang & Elixir Festa 2018 に参加してきた"
+title: "Earlang & Elixir Fest 2018 に参加してきた"
 tags: Elixir, event
 ---
 
-先日(6/16)，[Earlang & Elixir Festa 2018](https://elixir-fest.jp/) に参加してきたので，そのメモ書きです．
+先日(6/16)，[Earlang & Elixir Fest 2018](https://elixir-fest.jp/) に参加してきたので，そのメモ書きです．
 ちなみに，Elixir は普段たいして使ってないけど LT もしてきました．
 
 ##
