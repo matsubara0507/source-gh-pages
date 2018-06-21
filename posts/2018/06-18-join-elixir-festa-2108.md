@@ -6,6 +6,10 @@ tags: Elixir, event
 先日(6/16)，[Earlang & Elixir Fest 2018](https://elixir-fest.jp/) に参加してきたので，そのメモ書きです．
 ちなみに，Elixir は普段たいして使ってないけど LT もしてきました．
 
+#### 追記(2018.06.21)
+
+本稿公開後に公開してくださった発表スライドのリンクを追記しました．
+
 ##
 
 今年で2回目らしく，去年は Elixir の作者の [Jose Valim](https://twitter.com/josevalim) 氏を呼んで Keynote してもらい，全体のセッション内容としては Elixir を導入し始めた・挑戦中という話がメインだったようだ．
@@ -26,6 +30,7 @@ tags: Elixir, event
 (ネットワーク設定にバタバタしてたのでメモが少ない)
 
 - [rinosamakanata](https://github.com/rinosamakanata) 氏の発表
+- [発表スライドはコチラ](https://eole-repos.github.io/public/elixirfest/2018/elixirfest2018-eole-rinosamakanata.pdf)
 - もともとは RoR らしい
 - 技術的課題
     - 分散の問題
@@ -151,6 +156,7 @@ PubSub 完全に理解した(嘘)
 #### Antikythera Framework: An Elixir framework for multiple web services
 
 - [skirino](https://github.com/skirino) 氏の発表
+- [発表スライドはコチラ](https://skirino.github.io/slides/antikythera_framework.html#/)
 - 社内で作ったフレームワークの紹介 : [antikythera](https://github.com/access-company/antikythera)
 - Antikythera メカニズム
     - ギリシャ時代のオーパーツ
