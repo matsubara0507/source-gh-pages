@@ -1,5 +1,5 @@
 ---
-title: "Earlang & Elixir Fest 2018 に参加してきた"
+title: Earlang ＆ Elixir Fest 2018 に参加してきた
 tags: Elixir, event
 ---
 
