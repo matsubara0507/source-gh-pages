@@ -1,6 +1,6 @@
 ---
 title: Haskell で型安全に YAML ファイルをビルド時に埋め込む
-tags: haskell, extensible-package
+tags: Haskell, extensible-package
 ---
 
 ザックリ言えば「[Template Haskell でコード中に JSON を埋め込んだりコンパイル時にファイルから型安全に読み込んだりする - ryota-ka's blog](https://ryota-ka.hatenablog.com/entry/2018/02/14/103000)」という記事の YAML 版です．
