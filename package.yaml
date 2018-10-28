@@ -10,7 +10,6 @@ ghc-options:
 dependencies:
   - base == 4.*
   - extensible
-  - extensible-instances
   - lens
 
 executables:
