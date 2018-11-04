@@ -1,6 +1,6 @@
 ---
 title: stack-templates を集める with GraphQL
-tags: Haskell, GraphQL
+tags: Haskell, GraphQL, application
 ---
 
 Haskell Day の仕込みパート1です(2があるかは知らない)．

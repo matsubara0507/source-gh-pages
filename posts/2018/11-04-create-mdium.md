@@ -1,6 +1,6 @@
 ---
 title: Markdownで書いたテキストをMediumへポストする(mdium)
-tags: Haskell
+tags: Haskell, application
 ---
 
 完全な二番煎じです。
