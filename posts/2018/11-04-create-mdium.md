@@ -107,7 +107,7 @@ $ stack --docker image container
 ```
 
 作成した Image は `docker push` コマンドでアップロードしている．
-また，この一連の流れを TraviCI で自動化している．
+また，この一連の流れを TravisCI で自動化している．
 
 ## ToDo
 
