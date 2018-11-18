@@ -25,7 +25,7 @@ tags: event
 例年の報告記事を見ると，ステッカーもついてくるみたいですね．
 
 - [Hacktoberfest 2016 に参加してきた - Memento memo.](http://shotat.hateblo.jp/entry/2016/12/07/230216)
-- [Hacktoberfest | Filip's trail](https://filipfracz.net/2015/12/hacktoberfest)
+- ~Hacktoberfest | Filip's trail~ (リンク切れ...)
 
 ぼくは今年知りました．
 Twitter サーフィンをしてる時に．
@@ -38,7 +38,7 @@ Twitter サーフィンをしてる時に．
 わざわざ説明することでもないんだけど
 
 1. [公式サイト](https://hacktoberfest.digitalocean.com)へいく
-2. [Start Hacking](https://hacktoberfest.digitalocean.com/sign_up/register) をクリック
+2. Start Hacking をクリック
 3. GitHub アカウントを認証(無いなら作る)
 4. 必要な個人情報を入力(名前とか入力した気がする，忘れた)
 
@@ -46,14 +46,12 @@ Twitter サーフィンをしてる時に．
 
 ### 進捗の確認
 
-ログインして，公式ページの `Check your Progress` をクリックか[ココ](https://hacktoberfest.digitalocean.com/stats)の一番下．
+ログインして，公式ページの `Check your Progress` をクリック~かココ]の一番下~(リンク切れ)．
 
 10月の最初の方には無かった気がする．
 それまでは [Hacktoberfest Checker](https://hacktoberfestchecker.herokuapp.com) を使ってた．
 
 `hacktoberfest.digitalocean.com/stats/username` の `username` に参加者の GitHub アカウントを入力すれば他人のも見れる(検索バー作ればいいのに)．
-
-例えば，ぼくの [https://hacktoberfest.digitalocean.com/stats/matsubara0507](https://hacktoberfest.digitalocean.com/stats/matsubara0507)
 
 ### 出した PR
 

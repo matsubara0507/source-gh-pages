@@ -53,7 +53,7 @@ instance Forall (KeyValue KnownSymbol FromJSON) xs => FromJSON (Record xs) where
         Nothing -> fail $ "Missing key: " `mappend` k
 ```
 
-まぁこれは [`extensible` のリポジトリ](https://github.com/fumieval/extensible)に[サンプル](https://github.com/fumieval/extensible/blob/master/examples/aeson.hs)として置いてあるんだけどね．
+まぁこれは [`extensible` のリポジトリ](https://github.com/fumieval/extensible)に[サンプル](https://github.com/fumieval/extensible/blob/3f601a087039bb5764c0fa8c5f4dcd5d907c412f/examples/aeson.hs)として置いてあるんだけどね．
 
 ### リクエストパラメータ
 

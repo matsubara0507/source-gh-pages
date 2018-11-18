@@ -178,7 +178,7 @@ whoami [options] [input-file]
 
 ##
 
-注意点として [fumieval/extensible](https://github.com/fumieval/extensible) の[例にある `FromJSON` のインスタンス](https://github.com/fumieval/extensible/blob/master/examples/aeson.hs)とは微妙に実装が違う．
+注意点として [fumieval/extensible](https://github.com/fumieval/extensible) の[例にある `FromJSON` のインスタンス](https://github.com/fumieval/extensible/blob/3f601a087039bb5764c0fa8c5f4dcd5d907c412f/examples/aeson.hs)とは微妙に実装が違う．
 作者さんのは `Maybe a` にしてもキーが存在しないといけないのだが，`aeson` の `Generics` は `Maybe a` ならキーが無くても良いので，そっちに合わせた．
 
 ## 仕組み

@@ -48,7 +48,7 @@ Lisp の説明は要らないよね．
 
 - [Land of Lisp](https://www.oreilly.co.jp/books/9784873115870/)
     - ぼくの知る中で唯一の [Music Video](https://youtu.be/HM1Zb3xmvMc) のある技術書
-- [計算機プログラムの構造と解釈](https://mitpress.mit.edu/sicp/full-text/book/book.html)
+- [計算機プログラムの構造と解釈](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
     - かつての MIT の教科書(Python にその座を奪われた)
 
 最近では [Clojure](https://clojure.org/) が最もモダンな Lisp かもしれない．

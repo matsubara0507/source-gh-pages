@@ -85,7 +85,7 @@ LINE の ID をプロパティで保存するとして，キーを何にする�
 [`@google-cloud/datastore`](https://www.npmjs.com/package/@google-cloud/datastore) というパッケージを用いる．
 以下の資料を参考にして頑張って書いた．
 
-- [Datastore - Google Cloud Platform on GitHub](https://googlecloudplatform.github.io/google-cloud-node/#/docs/datastore/1.1.0/datastore)
+- ~Datastore - Google Cloud Platform on GitHub~ (リンク切れ)
 - [Node.js で Cloud Datastore を使用する | Node.js | Google Cloud Platform
 ](https://cloud.google.com/nodejs/getting-started/using-cloud-datastore?hl=ja)
 

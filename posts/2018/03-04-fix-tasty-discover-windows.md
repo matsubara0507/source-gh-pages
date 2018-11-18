@@ -12,6 +12,13 @@ tags: Haskell
 なので，直して PR 出した．
 この記事はそのメモです．
 
+##
+
+**2018.11.18 追記**
+
+tasty-discover はたしか GitHub が MS に買収されたあたりに，[git.coop に移行された](https://git.coop/decentral1se/tasty-discover)．
+なので，リンクなどが間違っていたらすいません．
+
 ## 問題のエラー
 
 ```
@@ -46,9 +53,9 @@ Progress: 1/2
 ## PR を出す
 
 修正自体は1時間ほどで終わり(移動中の新幹線の中で直した)，これでテストを実行できるようになったので PR を出さずに満足してしまった(あるある)．
-半月ほどほっといてたら，同じケースで困った知り合いに [Issue](https://github.com/lwm/tasty-discover/issues/135) を出されてしまった(笑)
+半月ほどほっといてたら，同じケースで困った知り合いに Issue を出されてしまった(笑)
 
-しょうがないので PR を出そうとしたら，「Windows は良く分からないから，ぜひ Windows 環境用の自動テストも欲しい！」と[作者に言われてしまった](https://github.com/lwm/tasty-discover/issues/127)(「時間があればやって」とね)．
+しょうがないので PR を出そうとしたら，「Windows は良く分からないから，ぜひ Windows 環境用の自動テストも欲しい！」と作者に言われてしまった(「時間があればやって」とね)．
 
 ##
 
@@ -100,5 +107,5 @@ init:
 
 ## おしまい
 
-なんか [Push 権限を貰った](https://github.com/lwm/tasty-discover/issues/139)．
+なんか Push 権限を貰った．
 こういうこともあるんですね(OSS歴が浅いので驚いた)．

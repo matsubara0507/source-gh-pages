@@ -25,7 +25,7 @@ main = do
  where
   check url = not . or . (:) (null url) $ fmap
     (`isPrefixOf` url)
-    ["https://matsubara0507.github.io", "../", "#"]
+    ["https://matsubara0507.github.io", "../", "#", "20"]
   spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
 scrapeLinks :: Text -> [Text]
