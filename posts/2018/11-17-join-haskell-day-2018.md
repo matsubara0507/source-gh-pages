@@ -21,7 +21,7 @@ tags: Haskell, event
 
 [発表資料はこちら](https://htmlpreview.github.io/?https://github.com/khibino/haskell-day-2018/blob/master/presentation.html)．
 
-10年近く職業 Haskeller をやっていた [hibino](https://github.com/khibino) 氏が，当時 Haskell を導入するに至った話と，彼が作った [HRR](https://hackage.haskell.org/package/relational-record) というライブラリの紹介
+10年近く職業 Haskeller をやっていた [khibino](https://github.com/khibino) 氏が，当時 Haskell を導入するに至った話と，彼が作った [HRR](https://hackage.haskell.org/package/relational-record) というライブラリの紹介
 Perl に変わるグルー言語を求めて Haskell に行き着いたそうだ．
 「GHC6.8 ですよ，GHC8.6 じゃなく，すごく無いですか？」すごい．
 HRRは面白そうだけど，使うタイミングがないや．
@@ -66,7 +66,7 @@ Dhall は設定ファイルを記述するための DSL である．
 群や環などの代数的構造についての話．
 ステップバイステップに要件が増えていくのでわかりやすい説明だった．
 
-ちなみに個人的な肌感として，このような数学的な素養がないと Haskell プログラミングができないと，そうでもないと思う．
+ちなみに個人的な肌感として，このような数学的な素養がないと Haskell プログラミングができないかというと，そうでもないと思う．
 僕自身は教養としてそのあたりを知ってはいるので微妙なところだが，普段 Haskell プログラミングしてる時に意識してはいないはず．
 ただ，いくつかの言語機能やライブラリは数学や論理学など学術的なバックグランドを持ってることがある．
 そのような場合は「なぜこのような仕様なのか」「どうしてこのような仕組みでうまくいくかのか」などは，学術論文にしか書いてないことが多い．
