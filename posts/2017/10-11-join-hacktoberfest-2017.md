@@ -46,7 +46,7 @@ Twitter サーフィンをしてる時に．
 
 ### 進捗の確認
 
-ログインして，公式ページの `Check your Progress` をクリック~かココ]の一番下~(リンク切れ)．
+ログインして，公式ページの `Check your Progress` をクリック~かココの一番下~(リンク切れ)．
 
 10月の最初の方には無かった気がする．
 それまでは [Hacktoberfest Checker](https://hacktoberfestchecker.herokuapp.com) を使ってた．
