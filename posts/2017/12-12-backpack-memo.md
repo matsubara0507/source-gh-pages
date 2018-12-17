@@ -90,8 +90,8 @@ Backpack は何年も前から学術的に研究されていた機能で，そ�
     - 新しくシグネチャを導入(モジュールの型みたいなもの)
     - パッケージはシグネチャとモジュールを持てる
 - シンプルな MixIn デザインを採用
-	  - ベースは [MixML](https://github.com/rossberg/mixml)
-	  - いくつか問題があったので Haskell に対応させた
+    - ベースは [MixML](https://github.com/rossberg/mixml)
+    - いくつか問題があったので Haskell に対応させた
 - ジェネリックな設計なので他の弱いモジュール性を持つ言語でも機能する(だろう)
 
 ちなみに，誰もが羨むモジュールシステム(要出典)ML系のファンクターではダメだったのかというと
@@ -273,7 +273,7 @@ Backpack'14 はコンパイラとパッケージマネージャー間の **抽�
 - Backpack'14 を実用的に改良
 - コンパイラとパッケージマネージャーの障壁(バリア)を保持
 - GHC8.2 と Cabal 2.0 に導入された
-	  - 我らがヒーロー Stack 様はまだ対応できてない...
+    - 我らがヒーロー Stack 様はまだ対応できてない...
 
 ちなみに，パッケージシステムが変わったため現状の Hackage は使えず，代わりに Hackage をフォークした [next.hackage](http://next.hackage.haskell.org:8080/) を用いるらしい．
 また，[既知の未解決問題](https://github.com/ezyang/ghc-proposals/blob/backpack/proposals/0000-backpack.rst#unresolved-questions)として，(3) の再帰的リンクは実現できていないそうだ．
@@ -376,10 +376,10 @@ unit main where
 1. 単一のパッケージで管理する場合
     - [`single-package`](https://github.com/ezyang/backpack-regex-example/tree/single-package)ブランチや
     - [`better-single-package`](https://github.com/ezyang/backpack-regex-example/tree/better-single-package)ブランチ
-	  - `cabal build` でビルドできる
+    - `cabal build` でビルドできる
 2. 分割してパッケージを管理する場合
     - [`multiple-packages`](https://github.com/ezyang/backpack-regex-example/tree/multiple-packages)
-	  - `cabal new-build` でビルドする
+    - `cabal new-build` でビルドする
 
 単一のパッケージ(`cabal` ファイルがひとつ)の場合はパッケージでカプセル化される(要するにシグネチャと言う曖昧なものが外に出てこない)ため，`cabal-build` でうまく動作する(らしい)．
 しかし，各 `unit` を別々のパッケージとして公開する場合は，シグネチャを持つようなパッケージも個別にインスタンスする必要があり，それができるのは `cabal-new-build` だけだそうだ(この辺りはうっすらイメージできるぐらいで，自分も良く分かってない...)．
@@ -448,10 +448,10 @@ True
 ちゃんと論文読んでないので，ぼくが思うところですけど
 
 - 本質的には関係ない実装を利用者側で選択できる
-	  - `A` パッケージの文字列に `Text` を使うか `ByteString` を使うかは利用者の自由
-	  - `A-text` とか `A-bytestring` とか別に作る必要が無い
+    - `A` パッケージの文字列に `Text` を使うか `ByteString` を使うかは利用者の自由
+    - `A-text` とか `A-bytestring` とか別に作る必要が無い
 - 型クラスに無理やり突っ込んでたモノが解決
-	  - モジュールレベルにアドホック多相ができる(たぶん)
+    - モジュールレベルにアドホック多相ができる(たぶん)
 - **面白い**
 
 ## おまけ: stack と Backpack
@@ -463,7 +463,7 @@ True
 
 1. Stack が Cabal2.0 をサポート(済)
 2. Stack をコンポーネントごとのビルドプランに切り替える(see [haskell/cabal#2802](https://github.com/haskell/cabal/issues/2802))
-	  - 一番エキサイティングなところらしい(?)
+    - 一番エキサイティングなところらしい(?)
 3. Cabal2.0前後でビルドプランを切り替える(難題)
 
 で，stack の何が問題なのかと言うと
