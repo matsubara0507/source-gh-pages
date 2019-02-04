@@ -4,6 +4,12 @@ thumbnail: "/assets/recommend-marp/editing_marp.jpg"
 tags: Marp
 ---
 
+本記事で紹介している **Marp は今後メンテナンスしないと作者が明言しており**，代わりに Marp Next というツールを作成しているようなので，そちらの紹介記事を書きました:
+
+- [Re: Marp のすゝめ - ひげメモ](/posts/2019-02-04-re-recommend-marp.html)
+
+##
+
 [IGGG アドベントカレンダー 2016](http://www.adventar.org/calendars/1572) 14日目の記事です．
 
 昨日は謎のC++使い [castorb100](http://castorb100.hatenablog.com/entry/custom/advent/161213) さんが mutex とおまけで Diffie-Hellman 鍵交換の話をしてくれてましたね．
