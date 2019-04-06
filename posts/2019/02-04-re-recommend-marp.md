@@ -4,6 +4,8 @@ thumbnail: "/assets/re-recommend-marp/editing_marp_next.jpg"
 tags: Marp
 ---
 
+**2019.4.6 Marp-core-0.6.0 での更新を反映した**
+
 [Marp](https://yhatt.github.io/marp/) というのは Markdown 記法で書けるスライド作成ツールです．
 
 - Markdown 記法で手軽に書ける
@@ -61,6 +63,7 @@ tags: Marp
     - それらはテーマのイチ `class` となっている
     - 前の `template` も `class` なので組み合わせれない
     - 明示的に指定できるようになったのは嬉しい
+    - class を複数設定できるようになった！ ([marp-core-0.6.0~](https://github.com/marp-team/marp-core/pull/69))
 6. KaTeX のバージョンアップ (Marp Core)
     - 0.6.0 => 0.10.0
     - 0.6.0 だと全然 LaTeX 記法をサポートしていないので[助かる](https://katex.org/docs/supported.html)
@@ -161,6 +164,7 @@ yarn start
 - `lead` + `invert` などの class を作っておいた
     - scss で書いてるので `lead`  を適当に mixi-in にして include するだけ
     - これもできれば `class` の組み合わせができるようになって欲しい
+    - marp-core-0.6.0 から class を複数設定できるようになったので、これはいらない ;)
 
 ### Olive
 
