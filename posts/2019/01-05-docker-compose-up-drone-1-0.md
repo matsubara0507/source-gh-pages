@@ -5,6 +5,8 @@ tags: Drone, Haskell, library
 
 **2019.4.6 YAMLの設定が一部間違っていたので修正しました**
 
+#
+
 新年一発目です．
 [Drone CI](https://drone.io/) が，めでたくバージョン1.0(まだ rc だけど)をリリースしてドキュメントも刷新されたんですけど，[0.8.x 時代にはあった `docker-compose` でのやり方](https://0-8-0.docs.drone.io/install-for-github/)が書いてなかった(見つけられなかった)ので，そのメモ書きです．
 ちなみに経緯は，結構前に作っていた [drone-haskell](https://github.com/matsubara0507/drone-haskell) と言う Drone CI の Haskell クライアントを Drone 1.0 に対応したくて，手元で Drone を起動しようとしたためです．
