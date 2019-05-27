@@ -53,7 +53,7 @@ tonatona との違いは `RIO env a` の `env` に当たる部分に対して，
 単純に，設定っぽい extensible の拡張可能レコード(`#logger <@=> ...` とか)を記述するだけで良い．
 これの実行結果は次のようになる:
 
-```shell
+```code
 $ stack runghc mix/sample/Main.hs
 2019-05-21 22:33:49.378471: [debug] This is debug: Hoge
 @(mix/sample/Main.hs:23:3)
@@ -221,7 +221,7 @@ app = do
 
 これを実行するとこんな感じ:
 
-```
+```code
 $ GH_TOKEN=xxx DRONE_HOST=cloud.drone.io DRONE_TOKEN=yyy stack runghc -- Main.hs
 fetch GitHub user info:
 Hi matsubara0507!!
