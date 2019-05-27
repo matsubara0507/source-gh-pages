@@ -27,6 +27,7 @@ executables:
       - skylighting
       - time
       - yaml
+      - scalpel-core
 
 tests:
   check-links:

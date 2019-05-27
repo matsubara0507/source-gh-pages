@@ -14,12 +14,15 @@ import           Config
 import           Control.Monad.Reader
 import           Data.Extensible                hiding (match)
 import           Data.Extensible.Effect.Default
+import           Data.Maybe                     (fromMaybe)
 import           Data.Monoid                    ((<>))
 import           Data.Proxy                     (Proxy (..))
 import           Hakyll                         hiding (dateFieldWith)
 import           Hakyll.Ext
 import           Skylighting                    (pygments, styleToCss)
 import           System.FilePath
+import           Text.HTML.Scalpel.Core         ((@:))
+import qualified Text.HTML.Scalpel.Core         as S
 
 type SiteRules = Record Fields
 
@@ -202,7 +205,7 @@ instance MakeRule ("feed" >: ()) where
     liftR . create ["feed.xml"] $ do
       route idRoute
       compile $ do
-        let feedCtx = postCtx' <> bodyField "description"
+        let feedCtx = postCtx' <> postContentField "description"
         posts <- takeRecentFirst' 10 =<< loadAllSnapshots "posts/**" "content"
         renderAtom (mkFeedConfig config) feedCtx posts
 
@@ -237,6 +240,14 @@ sortRecentFirst' = sortRecentFirstWith toDate
 
 tagsField' :: String -> Tags -> Context a
 tagsField' = tagsFieldWithSep " "
+
+postContentField :: String -> Context String
+postContentField key = field key (pure . scrapePostContent . itemBody)
+
+scrapePostContent :: String -> String
+scrapePostContent str =
+  fromMaybe "" $
+    S.scrapeStringLike str (S.html $ "div" @: [S.hasClass "post-content"])
 
 lasso2
   :: forall k1 k2 v1 v2 m h xs
