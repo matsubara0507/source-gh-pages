@@ -6,18 +6,15 @@ author:              MATSUBARA Nobutada
 category:            Web
 ghc-options:
   - -Wall
-  - -threaded
 dependencies:
   - base == 4.*
   - extensible
-  - lens
+  - microlens
 
 executables:
   site:
     source-dirs: app
     main: site.hs
-    ghc-options:
-      - -threaded
     dependencies:
       - blaze-html
       - containers

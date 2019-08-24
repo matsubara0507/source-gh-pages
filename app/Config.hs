@@ -6,13 +6,13 @@
 
 module Config where
 
-import           Control.Lens    hiding (Context)
 import           Data.Extensible
-import           Data.Map        (Map, foldMapWithKey)
-import           Data.Proxy      (Proxy (..))
-import           Data.Yaml       (decodeFileEither)
-import           GHC.TypeLits    (KnownSymbol, symbolVal)
+import           Data.Functor.Identity (Identity (..))
+import           Data.Map              (Map, foldMapWithKey)
+import           Data.Yaml             (decodeFileEither)
+import           GHC.TypeLits          (KnownSymbol)
 import           Hakyll
+import           Lens.Micro
 
 readConfig :: FilePath -> IO Config
 readConfig = fmap (either (error . show) id) . decodeFileEither
@@ -41,8 +41,8 @@ instance ToContext a => ToContext (Identity a) where
 
 mkSiteCtx :: Config -> Context String
 mkSiteCtx = hfoldMapFor
-  (Proxy :: Proxy (KeyValue KnownSymbol ToContext))
-  (toContext <$> symbolVal . proxyAssocKey <*> getField)
+  (Proxy :: Proxy (KeyTargetAre KnownSymbol ToContext))
+  (toContext <$> stringKeyOf <*> getField)
 
 mkFeedConfig :: Config -> FeedConfiguration
 mkFeedConfig conf = FeedConfiguration

@@ -56,7 +56,7 @@ run conf = retractEff . flip runReaderDef conf
 
 type FieldI = Field Identity
 
-tangles :: Comp (TangleT FieldI MidFields RulesM) FieldI :* MidFields
+tangles :: MidFields :& Comp (TangleT MidFields FieldI RulesM) FieldI
 tangles =
   htabulateFor (Proxy :: Proxy MakeRule) $ \m -> Comp $ Field . pure <$> rule m
 
@@ -64,7 +64,7 @@ makeRules :: RulesM SiteRules
 makeRules = shrink <$> runTangles tangles (wrench emptyRecord)
 
 class MakeRule kv where
-  rule :: proxy kv -> TangleT FieldI MidFields RulesM (AssocValue kv)
+  rule :: proxy kv -> TangleT MidFields FieldI RulesM (TargetOf kv)
 
 liftR :: MonadTrans t => Rules a -> t RulesM a
 liftR = lift . liftEff (Proxy :: Proxy "Rules")
@@ -251,7 +251,7 @@ scrapePostContent str =
 
 lasso2
   :: forall k1 k2 v1 v2 m h xs
-   . (Monad m, Associate k1 v1 xs, Associate k2 v2 xs, Wrapper h)
+   . (Monad m, Lookup xs k1 v1, Lookup xs k2 v2, Wrapper h)
   => (FieldName k1, FieldName k2)
-  -> TangleT h xs m (Repr h (k1 >: v1), Repr h (k2 >: v2))
+  -> TangleT xs h m (Repr h (k1 >: v1), Repr h (k2 >: v2))
 lasso2 (k1, k2) = (,) <$> lasso k1 <*> lasso k2
