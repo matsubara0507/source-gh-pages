@@ -516,7 +516,7 @@ Writing: elm-src/Generated/TodoAPI.elm
 
 あまり Elm の流儀を知らないが，HTTPリクエストのように外部から取得するデータは，[remotedata](http://package.elm-lang.org/packages/krisajenkins/remotedata/latest) パッケージの [`RemoteData`](http://package.elm-lang.org/packages/krisajenkins/remotedata/4.3.3/RemoteData#RemoteData) 型のようなデータ構造を使う(？)
 
-```haskell
+```Elm
 module Main exposing (..)
 
 import Generated.TodoAPI as API exposing (Todo)
@@ -545,7 +545,7 @@ type alias Model =
 
 以上から以下のような `Msg` を定義すればよい(全部で6種類のパターンがある)．
 
-```haskell
+```Elm
 type Msg
     = FetchTodos (Result Http.Error (List API.Todo))
     | Reload
@@ -562,7 +562,7 @@ type Button
 
 型はできたので，あとはトップダウンに作っていこう．
 
-```haskell
+```Elm
 main : Program Never Model Msg
 main =
     Html.program
@@ -622,7 +622,7 @@ Successfully generated static/main.js
 
 `model` 式はただの初期値で，`init` 関数はただの初期化関数だ．
 
-```haskell
+```Elm
 model : Model
 model =
     { todos = NotAsked, title = "" }
@@ -642,7 +642,7 @@ fetchTodos =
 
 `update` 関数は次のようになる
 
-```haskell
+```Elm
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
   case msg of

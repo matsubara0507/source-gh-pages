@@ -8,6 +8,14 @@ extra-deps:
 - membership-0
 - hakyll-4.12.5.2
 - lrucache-1.2.0.1
+- pandoc-2.7.3
+- pandoc-citeproc-0.16.2
+- skylighting-0.8.2
+- skylighting-core-0.8.2
+- cmark-gfm-0.2.0
+- hslua-1.0.3.2
+- hslua-module-system-0.2.1
+- ipynb-0.1
 # - Cabal-2.2.0.1
 # - containers-0.5.11.0
 # - barbies-1.1.3.0

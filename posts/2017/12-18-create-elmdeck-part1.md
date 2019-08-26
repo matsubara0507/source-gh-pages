@@ -63,7 +63,7 @@ tags: Elm, application
 
 pablohirafuji/elm-markdown は [`parse`](http://package.elm-lang.org/packages/pablohirafuji/elm-markdown/2.0.4/Markdown-Block#parse) 関数を用いることで文字列から次の `Block b i` 型のリストに変換する．
 
-```haskell
+```Elm
 type Block b i
     = BlankLine String
     | ThematicBreak
@@ -82,7 +82,7 @@ type Block b i
 なので，`ThematicBreak` で `List (Block b i)` を `List (List (Block b i))` に分割する．
 `(a -> Bool) -> List a -> List (List a)` って感じの関数が無かったので[自分で定義した](https://github.com/matsubara0507/elmdeck/blob/6ff0520f65080c9a94ac85c99fc01e0374ca250e/src/Utils.elm#L9)．
 
-```haskell
+```Elm
 markdownView : Model -> Html Msg
 markdownView { textarea, window } =
     textarea
@@ -132,7 +132,7 @@ var _matsubara0507$elmdeck$Native_Highlight = function() {
 
 Elm 側はこんな感じ．
 
-```haskell
+```Elm
 import Native.Highlight
 
 toHighlight : String -> String -> String
@@ -147,7 +147,7 @@ toHighlight =
 
 これをこんな感じに呼び出す
 
-```haskell
+```Elm
 customHtmlBlock : Block b i -> List (Html msg)
 customHtmlBlock block =
     case block of
@@ -201,7 +201,7 @@ var _matsubara0507$elmdeck$Native_Katex = function() {
 
 Elm 側はほぼ同じ．
 
-```haskell
+```Elm
 import Native.Katex
 
 toKatex : String -> String
@@ -220,7 +220,7 @@ $$
 が難しくてやめた(笑)
 結局 `katex` のシンタックスハイライトを KaTeX にした．
 
-```haskell
+```Elm
 customHtmlBlock : Block b Formula -> List (Html msg)
 customHtmlBlock block =
     case block of
@@ -263,7 +263,7 @@ divFormula code =
 
 インライン要素の型 `Inline i` は次のようになっている．
 
-```haskell
+```Elm
 type Inline i
     = Text String
     | HardLineBreak
@@ -279,7 +279,7 @@ type Inline i
 `i` の部分に新しい型を追加すればよいのだ．
 なので，数式のインライン要素用の型を定義する．
 
-```haskell
+```Elm
 type Formula
     = Formula String
 ```
@@ -289,7 +289,7 @@ type Formula
 そして `Block b i` だったところを `Block b Formula` に置き換える．
 次に上から順に変えていこう．
 
-```haskell
+```Elm
 customHtmlBlock : Block b Formula -> List (Html msg)
 customHtmlBlock block =
     case block of
@@ -320,7 +320,7 @@ customHtmlInline inline =
 
 `Inline i` 型の `Text String` のうち `$...$` のモノを `Custom (Formula txt) []` に変換する．
 
-```haskell
+```Elm
 parseFormulaInline : Inline Formula -> List (Inline Formula)
 parseFormulaInline inline =
     case inline of
@@ -353,7 +353,7 @@ parseFormula text = undefined ()
 
 が，自分には Haskell の Parsec 由来の [elm-community/parser-combinators](http://package.elm-lang.org/packages/elm-community/parser-combinators/latest) の方が使いやすかったのでコッチに逃げた(ゴメンナサイ)．
 
-```Haskell
+```Elm
 withFormula : Parser s ( String, String )
 withFormula =
     (,) <$> (String.concat <$> many noneDal) <*> formula
@@ -378,7 +378,7 @@ escapedChar =
 `abc$1+2$` が `("abc", "1+2")` になるようにパーサーを書いた(`$1+2$` は `("", "1+2")` となる)．
 このパーサーを再帰的に適用する．
 
-```Haskell
+```Elm
 parseFormula : String -> List (Inline Formula)
 parseFormula text =
     case Combine.parse withFormula text of
@@ -401,7 +401,7 @@ parseFormula text =
 
 pablohirafuji/elm-markdown には便利な高階関数がいくつか定義されている．
 
-```haskell
+```Elm
 walk : (Block b i -> Block b i) -> Block b i -> Block b i
 walkInlines : (Inline i -> Inline i) -> Block b i -> Block b i
 ```
@@ -412,7 +412,7 @@ walkInlines : (Inline i -> Inline i) -> Block b i -> Block b i
 しかし，用意した関数は `Inline Formula -> List (Inline Formula)` なのでどちらも使えない．
 なので，`walkInlinesWithConcat : (Inline i -> List (Inline i)) -> Block b i -> Block b i` というのを定義した．
 
-```Haskell
+```Elm
 parseFormulaInBlock : Block b Formula -> Block b Formula
 parseFormulaInBlock =
     Block.walkInlinesWithConcat parseFormulaInline
@@ -420,7 +420,7 @@ parseFormulaInBlock =
 
 あとはこれを呼ぶだけ
 
-```Haskell
+```Elm
 toSlide : Window.Size -> List (Block b Formula) -> Html msg
 toSlide window blocks =
     blocks

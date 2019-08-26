@@ -51,7 +51,7 @@ tags: Elm, application
 まずはモデルを考える．
 適当にパッケージを探して見たが， Elm 0.19 に対応している良さげなものはなかったので自作することにした:
 
-```haskell
+```Elm
 type alisa Board =
     { size : Int
     , cells : Array Cell
@@ -63,7 +63,7 @@ type Cell = Alive | Dead
 今回は正方形を想定するので `size` は一辺のマス数にする．
 つまり初期化関数は次のようになる．
 
-```haskell
+```Elm
 initBoard : Int -> Board
 initBoard n = { size = n, cells = Array.repeat (n * n) Dead }
 ```
@@ -74,7 +74,7 @@ initBoard n = { size = n, cells = Array.repeat (n * n) Dead }
 HTMLを見てみると，これは直列に繋いだ `div` を適当なタイミングで折り返しているようだ．
 このやり方なら `cells` を `size` 個ごとに行へとする必要がなく，完全にCSSだけでなんとかなる．
 
-```haskell
+```Elm
 main = viewBoard (initBoard 30)
 
 viewBoard : Board -> Html msg
@@ -127,7 +127,7 @@ vmin n = String.append (String.fromFloat n) "vmin"
 今回は [SingleSlider](https://package.elm-lang.org/packages/carwow/elm-slider/6.0.1/SingleSlider) を使いたい．
 SingleSlider の中に `Model` や `Msg` などが定義されているので，それらを適切に使えば良い．
 
-```haskell
+```Elm
 main = Browser.element
   { init = init
   , view = view
@@ -217,7 +217,7 @@ view model =
 生状態にできるかどうかのフラグと，オンの時だけマウスオーバーで生状態にするようにしたい．
 なので，まずはフラグを `Model` に追加した:
 
-```haskell
+```Elm
 type alias Board =
     { size : Int
     , cells : Array Cell
@@ -235,7 +235,7 @@ initBoard n =
 `planting` が真のときだけマウスオーバーでセルを生状態にできる(ようにする)．
 したがって「`planting` のオンオフ」と「セルを生状態にする」の二つの `Msg` が必要だ:
 
-```haskell
+```Elm
 type BoardMsg
     = Born Int -- インデックスのセルを生状態にする
     | Planting -- 生状態への変更を可能にする
@@ -256,7 +256,7 @@ born idx board =
 
 そして，盤上をクリックして `planting` のオンオフをし，マウスオーバーで生状態にするように `view` へ `Msg` を追加する:
 
-```haskell
+```Elm
 import Html.Events.Extra.Pointer as Pointer
 
 viewBoard : Board -> Html BoardMsg
@@ -310,7 +310,7 @@ concatIndexedMapWith f g board =
 マウスイベントには，おいおいスマホ対応もできるように [`mpizenberg/elm-pointer-events`](https://package.elm-lang.org/packages/mpizenberg/elm-pointer-events/latest) パッケージを利用した．
 あとは `main` 側を書き換えれば出来上がり:
 
-```haskell
+```Elm
 type Msg
     = SizeSliderMsg SingleSlider.Msg
     | BoardMsg BoardMsg
@@ -355,7 +355,7 @@ view model =
 いよいよライフゲーム化．
 まず，上述した状態変化の定義を関数(`nextCell`)にする:
 
-```haskell
+```Elm
 nextBoard : Board -> Board
 nextBoard board =
     { board | cells = Array.indexedMap (nextCell board) board.cells }
@@ -380,7 +380,7 @@ countAroundAliveCell board idx = Debug.todo "todo"
 ここで少し大変．
 `cells` を2次元配列ではなく，1次元配列にしてCSSで折りたたむようにしてしまったので，壁際にあるかどうかの判定をインデックスと盤面のサイズから導く必要があった:
 
-```haskell
+```Elm
 countAroundAliveCell : Board -> Int -> Int
 countAroundAliveCell board idx =
     aroundCell board idx |> List.filter ((==) Alive) |> List.length
@@ -406,7 +406,7 @@ aroundCell board idx =
 これで更新部分はできた．
 次に `nextBoard` 関数を呼び出すタイミングを `subscriptions` と `Msg` で定義する:
 
-```haskell
+```Elm
 main = Browser.element
   { init = init
   , view = view
@@ -445,7 +445,7 @@ subscriptions model =
 ついでに更新間隔の時間もスライダーで設定できるようにした．
 やり方は簡単で，`Model` にもう一つ `SingleSlider` を生やせばいい:
 
-```haskell
+```Elm
 type alias Model =
   { board : Board
   , sizeSlider : SingleSlider.Model
@@ -521,7 +521,7 @@ view model =
 これでスライダーが増えた．
 あとは `subscriptions` のところを書き換えるだけ:
 
-```haskell
+```Elm
 subscriptions : Model -> Sub Msg
 subscriptions model =
     if model.board.planting then
@@ -541,7 +541,7 @@ subscriptions model =
 そこで，ちょうど elm/url の勉強をしたので，url のクエリから指定できるようにしようと考えた．
 まずは状態の画像のリンクを `Board` に持たせる:
 
-```haskell
+```Elm
 type alias Board =
     { size : Int
     , cells : Array Cell
@@ -581,7 +581,7 @@ viewCell board idx cell =
 次は URL から値を取得する．
 URL を取得するには `Browser.application` を使う必要がある:
 
-```haskell
+```Elm
 main =
     Browser.application
         { init = init
@@ -617,7 +617,7 @@ parseUrl url = Debug.todo "parser"
 `.onUrlRequest` や `.onUrlChange` は SPA 内で URL を変更して遷移した場合に使う．
 今回はおそらく不要だが適当にそれっぽい `Msg` を生やした:
 
-```haskell
+```Elm
 type Msg
     = SizeSliderMsg SingleSlider.Msg
     | TickSliderMsg SingleSlider.Msg
@@ -659,7 +659,7 @@ update msg model =
 
 さぁいよいよ URL のパーサーだ:
 
-```haskell
+```Elm
 import Url exposing (Url)
 import Url.Parser as Url exposing ((</>), (<?>))
 import Url.Parser.Query as UrlQuery
@@ -691,7 +691,7 @@ parseUrl url =
 色々試行錯誤してみたが，マウスのような `onOver` を使うことはできない．
 マウスのように一筆書きのみたいに入力するには `Touch.onMove` を使うしかなく，このためには `Model` に `Touch.onMove` イベントで取得した値を保持させる必要があった:
 
-```haskell
+```Elm
 type alias Board =
     { size : Int
     , cells : Array Cell
@@ -712,7 +712,7 @@ initBoard n links =
 
 `.touchPos` を更新するために `BoardMsg` と `view` を書き換える:
 
-```haskell
+```Elm
 type BoardMsg
     = Born Int
     | Planting
@@ -754,7 +754,7 @@ view board =
 幸いなことにセル一つの大きさは相対サイズにしていたので，盤全体の実際の大きさとセル数がわかれば逆算できる．
 盤全体の大きさを得るには `Dom.getElement` を使う必要があり，そのためには `BoardMsg` を追加する必要があった:
 
-```haskell
+```Elm
 type BoardMsg
     = Born Int
     | Planting

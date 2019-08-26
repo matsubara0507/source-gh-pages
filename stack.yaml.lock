@@ -32,6 +32,62 @@ packages:
       sha256: 61b2a39a11873f2d8a577e1f6b5e848d2f465ea7f6837ce15436796d3a20eda0
   original:
     hackage: lrucache-1.2.0.1
+- completed:
+    hackage: pandoc-2.7.3@sha256:948cc90a0a4cf2031d93154e88cfd1dec3943282dc86e1ab7d5da9206ccb36bf,33273
+    pantry-tree:
+      size: 79947
+      sha256: 4f69c60e468b104ac854a7a8ff5d37cf71eac39d2c6a920111d5e63b93766cf8
+  original:
+    hackage: pandoc-2.7.3
+- completed:
+    hackage: pandoc-citeproc-0.16.2@sha256:d3437d6492ebe6c479d29c5ecf30f074d209a5c9479693edce55d1841c50f17c,8415
+    pantry-tree:
+      size: 25427
+      sha256: 9671e12deb5b4a4f2f69faa91295df503b87bb2121381be4cdaf8d14d69bea64
+  original:
+    hackage: pandoc-citeproc-0.16.2
+- completed:
+    hackage: skylighting-0.8.2@sha256:938c303653ea5097b91088f1e37f411e1c6db971b2cbad078125dc4cd34ea0a8,10432
+    pantry-tree:
+      size: 10381
+      sha256: 35e0268723ba5e180bcf2dce2e2f4aa87713efe7c535ffde1914c9f710606698
+  original:
+    hackage: skylighting-0.8.2
+- completed:
+    hackage: skylighting-core-0.8.2@sha256:5acd42b6915a0467dc06ce4129355e03b9ef2bd197a5122dfbb84255c8a04c91,8008
+    pantry-tree:
+      size: 12747
+      sha256: 41aec39171a9d4a92a21fb7f8ad113c5a07ffd30fb974fe66caed61964dbfd75
+  original:
+    hackage: skylighting-core-0.8.2
+- completed:
+    hackage: cmark-gfm-0.2.0@sha256:fb3f55b1db2e3cd121ec83bc97c06f0a8468623058b5876f8c750c61548461b8,5191
+    pantry-tree:
+      size: 4555
+      sha256: 4afbc514d68ddcea612ea088203339e9828463c0594908323861a4e1e5eb8a7e
+  original:
+    hackage: cmark-gfm-0.2.0
+- completed:
+    hackage: hslua-1.0.3.2@sha256:8db3f80f52e8382c3ec6801742a13649cc2bf82cf55b6ac288a47512a6cc3b33,9685
+    pantry-tree:
+      size: 6706
+      sha256: 3493a73e9d9a81402108d36e5b87fc688b7e0da0f29fce8f9a16d613b8d8e060
+  original:
+    hackage: hslua-1.0.3.2
+- completed:
+    hackage: hslua-module-system-0.2.1@sha256:7c498e51df885be5fd9abe9b762372ff4f125002824d8e11a7d5832154a7a1c3,2216
+    pantry-tree:
+      size: 508
+      sha256: 19a1e580174d2e02da4942887b2330804e8ceeed1ff4fd178a1bec4663e474ea
+  original:
+    hackage: hslua-module-system-0.2.1
+- completed:
+    hackage: ipynb-0.1@sha256:5b5240a9793781da557f82891d49cea63d71c8c5d3500fa3eac9fd702046b520,1926
+    pantry-tree:
+      size: 812
+      sha256: df171745ba4d6625eb71167a37237776cd10929994b05578b040592e2d5d5579
+  original:
+    hackage: ipynb-0.1
 snapshots:
 - completed:
     size: 495801

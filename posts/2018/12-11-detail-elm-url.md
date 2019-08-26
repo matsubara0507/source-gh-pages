@@ -17,7 +17,7 @@ elm-jp の Discord で突如無茶振りされたので頑張ります．
 
 こんな風に定義されている:
 
-```haskell
+```Elm
 type alias Url =
     { protocol : Protocol
     , host : String
@@ -42,7 +42,7 @@ type Protocol = Http | Https
 `host` は `example.com` の部分で `port_` は `8042` の部分．
 試しに REPL で `Url.fromString` してみよう:
 
-```haskell
+```Elm
 > import Url
 > Url.fromString "https://example.com:8042/over/there?name=ferret#nose"
 Just { fragment = Just "nose", host = "example.com", path = "/over/there", port_ = Just 8042, protocol = Https, query = Just "name=ferret" }
@@ -58,7 +58,7 @@ Just { fragment = Just "nose", host = "example.com", path = "/over/there", port_
 
 次のような型にパースするパーサーを記述する:
 
-```haskell
+```Elm
 type alias Post =
   { id : Int
   , name : Maybe String
@@ -67,7 +67,7 @@ type alias Post =
 
 入力には `http://localhost/hoge/1234?name=fuga` URL というのを想定している．
 
-```haskell
+```Elm
 import Url.Parser as Url exposing ((</>), (<?>))
 import Url.Parser.Query as Query
 
@@ -78,7 +78,7 @@ parser1 =
 
 これを使ってみると:
 
-```haskell
+```Elm
 > Url.fromString "http://localhost/hoge/1234?name=fuga" |> Maybe.andThen (Url.parse parser1)
 Just { id = 1234, name = Just "fuga" }
     : Maybe Post
@@ -88,7 +88,7 @@ Just { id = 1234, name = Just "fuga" }
 
 まずは肝となる `Url.parse` 関数の型を見てみる:
 
-```haskell
+```Elm
 parse : Parser (a -> a) a -> Url -> Maybe a
 ```
 
@@ -100,7 +100,7 @@ parse : Parser (a -> a) a -> Url -> Maybe a
 
 次のような関数を組み合わせて，パーサーを構築する:
 
-```haskell
+```Elm
 string : Parser (String -> a) a
 int    : Parser (Int -> a) a
 s      : String -> Parser a a
@@ -118,7 +118,7 @@ map    : a -> Parser a b -> Parser (b -> c) c
 
 試しにいくつか組み合わせてみよう:
 
-```haskell
+```Elm
 > parser2 = Url.s "hoge" </> Url.string </> Url.int
 Parser <function> : Url.Parser (String -> Int -> c) c
 
@@ -134,7 +134,7 @@ Parser <function> : Url.Parser (Hoge1 -> c) c
 このように `</>` でパーサーを連結することで `Parser a b` の `a` の部分がどんどん伸びてくる．
 ちなみに，`top` はURLの末尾かどうかのチェックするパーサーだ:
 
-```haskell
+```Elm
 > type Hoge2 = Hoge2
 
 > Url.fromString "http://localhost/" |> Maybe.andThen (Url.parse (Url.map Hoge2 Url.top))
@@ -150,7 +150,7 @@ Nothing : Maybe Hoge2
 なので次にクエリのパーサーを見てみる．
 便宜上以降ではクエリの型や関数には `Query` を付けるようにする．
 
-```haskell
+```Elm
 (<?>)  : Parser a (query -> b) -> Query.Parser query -> Parser a b
 string : String -> Query.Parser (Maybe String)
 int    : String -> Query.Parser (Maybe Int)
@@ -163,7 +163,7 @@ map2   : (a -> b -> result) -> Query.Parser a -> Query.Parser b -> Query.Parser 
 
 `map` で連結したものを `(<?>)` で一気に繋げても良いし，`(<?>)` で一つずつ繋げても良い:
 
-```haskell
+```Elm
 > type alias Fuga1 = { fuga1 : Maybe String, fuga2 : Maybe Int }
 
 > parser5 = Url.top <?> Query.map2 Fuga1 (Query.string "fuga1") (Query.int "fuga2")
@@ -177,13 +177,13 @@ Parser <function> : Url.Parser (Fuga1 -> c) c
 
 フラグメントの部分をパースするには `fragment` 関数を使う:
 
-```haskell
+```Elm
 fragment : (Maybe String -> fragment) -> Parser (fragment -> a) a
 ```
 
 なんでもよければ `identity` を使えば良い:
 
-```haskell
+```Elm
 > parser6 = Url.top </> Url.fragment identity
 Parser <function> : Url.Parser (Maybe String -> c) c
 
@@ -213,7 +213,7 @@ Just Nothing : Maybe (Maybe String)
 
 まずは型の中身を見てみる:
 
-```haskell
+```Elm
 type Parser a b =
   Parser (State a -> List (State b))
 
@@ -231,7 +231,7 @@ type alias State value =
 
 `Url.parse` や簡単なパーサーの中身を見てみればそれぞれのフィールドの意味がわかるはずだ:
 
-```haskell
+```Elm
 parse : Parser (a -> a) a -> Url -> Maybe a
 parse (Parser parser) url =
   getFirstMatch <| parser <|
@@ -264,7 +264,7 @@ getFirstMatch states =
 
 例えば `Url.string` を見てみる:
 
-```haskell
+```Elm
 string : Parser (String -> a) a
 string =
   custom "STRING" Just
@@ -293,7 +293,7 @@ custom tipe stringToSomething =
 
 ちなみに，クエリやフラグメントのパーサーは入力が違う(`unvisited` を使うのではない)だけだ:
 
-```haskell
+```Elm
 query : Query.Parser query -> Parser (query -> a) a
 query (Q.Parser queryParser) =
   Parser <| \{ visited, unvisited, params, frag, value } ->
@@ -311,7 +311,7 @@ fragment toFrag =
 
 ちなみに，コンビネーター(`(</>)`)の定義も見てみる:
 
-```haskell
+```Elm
 slash : Parser a b -> Parser b c -> Parser a c
 slash (Parser parseBefore) (Parser parseAfter) =
   Parser <| \state ->
@@ -323,7 +323,7 @@ slash (Parser parseBefore) (Parser parseAfter) =
 
 また，`Url.map` も見てみる:
 
-```haskell
+```Elm
 map : a -> Parser a b -> Parser (b -> c) c
 map subValue (Parser parseArg) =
   Parser <| \{ visited, unvisited, params, frag, value } ->
@@ -337,7 +337,7 @@ mapState func { visited, unvisited, params, frag, value } =
 
 `map` を利用する場合，各型変数は次のようになっていることが多いだろう:
 
-```haskell
+```Elm
 -- parseArg : State (x -> y) -> List (State y)
 -- value を identity と考えれば良い
 map : (x -> y) -> Parser (x -> y) y -> Parser (y -> z) z
@@ -368,7 +368,7 @@ map subValue (Parser parseArg) =
 大きな違いは `map` の振る舞いだ．
 `Parser a` の場合，レコード型 `Hoge = { hoge1 : Int, hoge2 : String }` のパーサーを記述するのには次のように書く:
 
-```haskell
+```Elm
 intParser : Parser Int
 stringParser : Parser String
 
@@ -383,7 +383,7 @@ parser1 = map2 Hoge intParser stringParser
 
 対して `Parser a b` の場合は `(</>)` を用いて `intParser` や `stringParser` をどんどん連結していき，最終的に `map` をする．
 
-```haskell
+```Elm
 parser0 : Parser (Int -> String  -> a) a
 parser0 = intParser </> stringParser
 
@@ -408,7 +408,7 @@ Elm で一般的かどうかはわからないが，Haskell では一般的な A
 
 Applicative スタイルとは，次のようなコンビネーターを使って関数を構築する:
 
-```haskell
+```Elm
 map   : (a -> b) -> Parser a -> Parser b
 apply : Parser (a -> b) -> Parser a -> Parser b
 ```
@@ -416,7 +416,7 @@ apply : Parser (a -> b) -> Parser a -> Parser b
 ちなみに，今回の話の流れ上 `Parser` を用いたが，ここが `Maybe` だろうと `List` だろうと同じに扱える．
 この場合，パーサーの構築は次のようになる:
 
-```haskell
+```Elm
 parser2 : Parser Fuga
 parser2 =
   apply (apply (map Fuga intParser) stringParser) intParser
@@ -424,7 +424,7 @@ parser2 =
 
 Elm 的にはパイプで連結できるので `app` の引数の順番を変えた方がいいかもしれない．
 
-```haskell
+```Elm
 andApply : Parser a -> Parser (a -> b) -> Parser b
 
 parser2 : Parser Fuga
@@ -438,7 +438,7 @@ parser2 =
 しかし，今回でいう `Url.s : String -> Parser a a` のような入力を消費するだけで結果に反映しないパーサーがあるとうまく行かない．
 `ignore` のようなコンビネーターが必要になる(ちなみに Haskell の Applicative にはもちろんある):
 
-```haskell
+```Elm
 s : String -> Parser ()
 ignore : Parser b -> Parser a -> Parser a
 
@@ -452,7 +452,7 @@ parser3 =
 
 ちなみに，再利用の方もうまくいく:
 
-```haskell
+```Elm
 parser0 : (Int -> String -> a) -> Parser a
 parser0 f = map f intParser |> andApply stringParser
 

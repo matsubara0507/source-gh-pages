@@ -284,7 +284,7 @@ Elm と JS を繋ぐには方法がいくつかあるが，今回は `Port` を�
 
 マークダウンファイルの中身を JS から Elm に投げるので Elm で次のような `ports` 関数を定義した．
 
-```Haskell
+```Elm
 -- src/Port/FS.elm
 port module Port.FS exposing (..)
 
@@ -293,7 +293,7 @@ port readFile : (String -> msg) -> Sub msg
 
 これを `Main.elm` で次のように呼び出す．
 
-```Haskell
+```Elm
 type alias Model =
   { textarea : String
   , window : Window.Size
@@ -347,7 +347,7 @@ update msg model =
 ファイルを保存するには開いてるファイルのファイルパスがあった方が良いだろう(上書き保存とかするなら)．
 なのでまずは，読み込み時の処理をファイルパスも投げるように書き換える．
 
-```Haskell
+```Elm
 -- src/Port/FS.elm
 port module Port.FS exposing (..)
 
@@ -359,7 +359,7 @@ type alias File =
 port readFile : (File -> msg) -> Sub msg
 ```
 
-```Haskell
+```Elm
 type alias Model =
   { textarea : String
   , window : Window.Size
@@ -427,7 +427,7 @@ module.exports = {
 
 まずは Elm 側で，以上の戦略から次のような `port` を書いた．
 
-```Haskell
+```Elm
 port writeFileHook : (Maybe String -> msg) -> Sub msg
 port writeFile : File -> Cmd msg
 ```
@@ -506,7 +506,7 @@ menuvar.append(new MenuItem(
 
 最後に Elm 側に処理を追加した．
 
-```Haskell
+```Elm
 -- app/src/Main.elm
 type Msg
   = TextAreaInput String
