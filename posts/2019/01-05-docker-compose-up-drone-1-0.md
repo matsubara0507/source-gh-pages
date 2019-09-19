@@ -29,7 +29,7 @@ Drone.io, Inc. というアメリカ企業が開発している継続的デリ�
 
 さて本題．
 ローカルで Drone サーバを `docker-compose up` して GitHub で利用する．
-GitHub で利用するには Drone を [GitHub の OAuth App として登録する必要がある](https://docs.drone.io/installation/github/multi-machine/#create-an-oauth-application)．
+GitHub で利用するには Drone を [GitHub の OAuth App として登録する必要がある](https://docs.drone.io/installation/providers/github/#step-1-preparation)．
 OAuth App にするにはパブリックな URL が必要なので，[ngrok](https://ngrok.com/) を利用する:
 
 ```
@@ -81,7 +81,7 @@ services:
 ```
 
 `XXX` は GitHub OAuth App の Client ID を，`YYY` には Client Secret を記述する．
-`DRONE_RPC_SECRET` の `ZZZ` は server と agent で同じであればなんでも良いのだが，[ここ](https://docs.drone.io/installation/github/multi-machine/#create-a-shared-secret)に `openssl rand -hex 16` で生成すると書いてあるので，それに従う．
+`DRONE_RPC_SECRET` の `ZZZ` は server と agent で同じであればなんでも良いのだが，[ここ](https://docs.drone.io/installation/providers/github/#step-1-preparation)に `openssl rand -hex 16` で生成すると書いてあるので，それに従う．
 これであとは `docker-compose up` をすれば無事起動完了だ．
 
 ```
