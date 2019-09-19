@@ -107,7 +107,7 @@ a = b;
 a[0] = new Parent();
 ```
 
-Java の配列は共変(covariant)なため，これはコンパイルエラーにはならない(共変性とは[子型のオブジェクトを親型の変数に代入できるという性質](https://msdn.microsoft.com/ja-jp/library/dd799517)．
+Java の配列は共変(covariant)なため，これはコンパイルエラーにはならない(共変性とは[子型のオブジェクトを親型の変数に代入できるという性質](https://docs.microsoft.com/ja-jp/dotnet/standard/generics/covariance-and-contravariance)．
 しかし，`a[0] = new Parent();` で，`ArrayStoreException` という実行時エラーになる．
 この振る舞いはリスコフの置換原則を完全に破っている．
 
