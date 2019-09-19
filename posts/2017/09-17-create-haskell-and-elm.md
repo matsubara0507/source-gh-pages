@@ -249,7 +249,7 @@ test-suite generate
 
 あんまり本質的ではないので載せないけど，[ここ](https://github.com/matsubara0507/haskell-and-elm/blob/97354ff7ad8cba37baead2393ea744dc2f3fa931/elm-src/Main.elm)を見て．
 
-ちなみに，[Primer CSS](http://primercss.io/) を使って，少しだけ見た目を綺麗にしてる．
+ちなみに，[Primer CSS](https://primer.style) を使って，少しだけ見た目を綺麗にしてる．
 
 ## 実行
 

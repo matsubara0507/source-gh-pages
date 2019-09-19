@@ -257,7 +257,7 @@ C# ではなくて Mono なのは，話の内容が，κeen さんみたいに�
 発表者は[Haochen](https://twitter.com/haochenxie)くん．
 名古屋からサテライトにて．
 
-スライドは[ココ](https://haochenxie.name/files/Promotion_on_Fluent_API_standard.pdf)(そのうちリンクが切れるかもと言っている)．
+スライドは[ココ](http://haochenxie.name/files/Promotion_on_Fluent_API_standard.pdf)(そのうちリンクが切れるかもと言っている)．
 
 内容は，Javaジェネリクスを利用して [Fluent Style の API](https://en.wikipedia.org/wiki/Fluent_interface) を実装数るためのパターンを考えました，という話．
 

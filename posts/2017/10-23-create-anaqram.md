@@ -171,7 +171,7 @@ Elm は頑張って書いてこんな感じのデザインにした．
 
 ##
 
-あと，今回で初めて気づいたのアだが，愛用している [Primer CSS](http://primercss.io/) が [cdnjs にあがっていた](https://cdnjs.com/libraries/Primer)．
+あと，今回で初めて気づいたのアだが，愛用している [Primer CSS](https://primer.style) が [cdnjs にあがっていた](https://cdnjs.com/libraries/Primer)．
 これで，CSS のリポジトリじゃなくなる．
 
 ### GKE にデプロイする

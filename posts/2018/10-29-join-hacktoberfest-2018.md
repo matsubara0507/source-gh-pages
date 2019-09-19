@@ -15,7 +15,7 @@ tags: event
 
 ![](/assets/join-hacktoberfest-2018/status.png)
 
-[ここから見れる](https://hacktoberfest.digitalocean.com/stats/matsubara0507)が，毎年同じリンクを使ってるっぽいので，2019年にこの記事を見にきた人は役に立たないリンクです(笑)
+~ここから見れるが，毎年同じリンクを使ってるっぽいので，2019年にこの記事を見にきた人は役に立たないリンクです(笑)~ 2019年になりました。
 
 ## 出した PR
 
@@ -52,7 +52,7 @@ tags: event
 これは Hacktoberfest が作ったお遊びリポジトリだ（多分）．
 いろんな言語の `Hello, world!` と出力するプログラムを集めるリポジトリのようだ．
 
-僕は [Hacktoberfest のグローバルステータス](https://hacktoberfest.digitalocean.com/stats)の「Highest Pull Request Count Repos」で見かけた（今は read-only になっているので PR は出せない）．
+僕は Hacktoberfest のグローバルステータスの「Highest Pull Request Count Repos」で見かけた（今は read-only になっているので PR は出せない）．
 面白そうだったので，まだ無かった [Egison](https://www.egison.org/) のプログラムを PR として出した．
 
 ```egison

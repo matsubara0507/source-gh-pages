@@ -5,7 +5,7 @@ tags: Haskell, application
 
 完全な二番煎じです。
 
-- [Markdownで書いたテキストをMediumへポストする(md2mid) – namaraii.com](https://namaraii.com/markdownで書いたテキストをmediumへポストする-md2mid-60c6ff9efde)
+- [Markdownで書いたテキストをMediumへポストする(md2mid) – namaraii.com](https://namaraii.com/post/markdownで書いたテキストをmediumへポストするmd2mid/)
 
 上記記事は，Go 言語で作った「Markdownで書いたテキストをMediumへポストする」CLIツールです．
 弊社の技術記事置き場が Medium だったので，なんとか，ここのように Markdown で書けないかと調べていたら上記記事が出て来ました．

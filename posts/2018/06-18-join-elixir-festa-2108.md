@@ -30,7 +30,7 @@ tags: Elixir, event
 (ネットワーク設定にバタバタしてたのでメモが少ない)
 
 - [rinosamakanata](https://github.com/rinosamakanata) 氏の発表
-- [発表スライドはコチラ](https://eole-repos.github.io/public/elixirfest/2018/elixirfest2018-eole-rinosamakanata.pdf)
+- ~~発表スライドはコチラ~~ 残念ながらリンク切れ
 - もともとは RoR らしい
 - 技術的課題
     - 分散の問題

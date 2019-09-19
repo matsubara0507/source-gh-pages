@@ -127,7 +127,7 @@ Error in $: key "columns" not present
 ## extensible パッケージ
 
 言わずもがな，拡張可能なレコードやバリアントを提供するパッケージだ．
-(詳しくは，最近急ピッチで充実されている[攻略Wiki](https://wiki.hask.moe/)を読むといいんじゃないんかな？)
+(詳しくは，最近急ピッチで充実されている[攻略Wiki](http://wiki.hask.moe/)を読むといいんじゃないんかな？)
 
 例えば，さっきから使っている `Config` 型を `extensible` レコード型で書くと次のように書ける
 
