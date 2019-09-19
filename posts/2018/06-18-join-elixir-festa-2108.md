@@ -200,8 +200,7 @@ mix すごいのはよくわかる．
 #### Erlang 事例紹介: メディアストリーム中継システム
 
 - [amutake](https://github.com/amutake) 氏の発表
-- [発表スライドはコチラ](https://niconare.nicovideo.jp/watch/kn3115)
-    - ニコニコのスライド置き場あったんだ(笑)
+- [発表スライドはコチラ](https://speakerdeck.com/amutake/erlang-shi-li-shao-jie-medeiasutorimuzhong-ji-sisutemu)
 - ニコ生で使われる(予定)のシステムの話(Erlang 製)
 - 生放送の中継ツリー
 - 生放送に求められる性質
