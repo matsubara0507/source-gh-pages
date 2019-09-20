@@ -104,7 +104,7 @@ Elm で初期値を与えるには `init` 関数の `Flag` というのを使う
 [git-plantation では Haskell で埋め込んでいた](https://github.com/matsubara0507/git-plantation/blob/8b0c44e6e6e20bd23998f7df5e0817fcf17fb6a8/src/Git/Plantation/API.hs#L47-L48)のだが，今回はサーバー側がないのでできない．
 ググったら出てきた:
 
-- [Load JSON file locally using pure Javascript by Rich on CodePen](https://codepen.io/KryptoniteDove/post/load-json-file-locally-using-pure-javascript)
+- [Access local JSON data with Javascript・GitHub Gist](https://gist.github.com/laurenancona/bd560948d71054e3d1477e43c4d48cb6)
 
 JS 詳しくないのでこれが良い方法なのかはわからないけど，これを参考にして次のような JS を書いて `index.html` から読み込むようにした:
 

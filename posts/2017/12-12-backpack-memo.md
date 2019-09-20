@@ -275,7 +275,7 @@ Backpack'14 はコンパイラとパッケージマネージャー間の **抽�
 - GHC8.2 と Cabal 2.0 に導入された
     - 我らがヒーロー Stack 様はまだ対応できてない...
 
-ちなみに，パッケージシステムが変わったため現状の Hackage は使えず，代わりに Hackage をフォークした [next.hackage](http://next.hackage.haskell.org:8080/) を用いるらしい．
+~~ちなみに，パッケージシステムが変わったため現状の Hackage は使えず，代わりに Hackage をフォークした next.hackage を用いるらしい．~~ いつのまにかリンク切れになってた．
 また，[既知の未解決問題](https://github.com/ezyang/ghc-proposals/blob/backpack/proposals/0000-backpack.rst#unresolved-questions)として，(3) の再帰的リンクは実現できていないそうだ．
 残念(面白いけども有用か？と言われると分からんし困らない気はする)．
 

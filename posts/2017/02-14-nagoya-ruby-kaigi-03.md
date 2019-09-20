@@ -42,7 +42,7 @@ Ruby は好きです．
         - の Webサイト作ってる
         - もちろん Rails 製
         - [scrivito](https://scrivito.com/) でできてる
-            - Rails 用の [CMS](http://e-words.jp/w/CMS.html)
+            - Rails 用の CMS
             - Rails が分からんでも記事が書ける
         - [GitHub で公開中](https://github.com/CoderDojo/coderdojo.github.io)
     - [Ruby Business Users Conference 2017](http://www.rubybusiness-conf.org/) (2/23)

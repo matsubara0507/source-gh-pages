@@ -86,7 +86,7 @@ Unable to parse cabal file for haddock-library-1.4.5: FromString "This package r
 
 ##
 
-ちなみに，`nightly-2017-08-10` を使うだけで以下のような同様のエラーが出たが，これは `stack-1.5.1` にするだけでうまくいった(haskell-jp で [igrep](https://github.com/igrep) さんに[教えてもらった](https://haskell-jp.slackarchive.io/questions/page-15/ts-1502333357684352)！感謝！！)．
+ちなみに，`nightly-2017-08-10` を使うだけで以下のような同様のエラーが出たが，これは `stack-1.5.1` にするだけでうまくいった(haskell-jp で [igrep](https://github.com/igrep) さんに教えてもらった！感謝！！)．
 
 ```bash
 $ stack build

@@ -24,7 +24,7 @@ Chrome 拡張を作ってみた．
 
 [ソースコードはコチラ](https://github.com/matsubara0507/bookmark-hub)．
 
-見た目は [Primer.css](http://primercss.io/) っていう GitHub 公式の CSS ツールキットを用いて寄せた．
+見た目は [Primer.css](https://primer.style) っていう GitHub 公式の CSS ツールキットを用いて寄せた．
 あとは，リポジトリとブランチを既存のを取ってきて選択できるようにした．
 
 ## 作る

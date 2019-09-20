@@ -107,7 +107,7 @@ a = b;
 a[0] = new Parent();
 ```
 
-Java の配列は共変(covariant)なため，これはコンパイルエラーにはならない(共変性とは[子型のオブジェクトを親型の変数に代入できるという性質](https://msdn.microsoft.com/ja-jp/library/dd799517)．
+Java の配列は共変(covariant)なため，これはコンパイルエラーにはならない(共変性とは[子型のオブジェクトを親型の変数に代入できるという性質](https://docs.microsoft.com/ja-jp/dotnet/standard/generics/covariance-and-contravariance)．
 しかし，`a[0] = new Parent();` で，`ArrayStoreException` という実行時エラーになる．
 この振る舞いはリスコフの置換原則を完全に破っている．
 
@@ -257,7 +257,7 @@ C# ではなくて Mono なのは，話の内容が，κeen さんみたいに�
 発表者は[Haochen](https://twitter.com/haochenxie)くん．
 名古屋からサテライトにて．
 
-スライドは[ココ](https://haochenxie.name/files/Promotion_on_Fluent_API_standard.pdf)(そのうちリンクが切れるかもと言っている)．
+スライドは[ココ](http://haochenxie.name/files/Promotion_on_Fluent_API_standard.pdf)(そのうちリンクが切れるかもと言っている)．
 
 内容は，Javaジェネリクスを利用して [Fluent Style の API](https://en.wikipedia.org/wiki/Fluent_interface) を実装数るためのパターンを考えました，という話．
 

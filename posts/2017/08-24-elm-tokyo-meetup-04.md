@@ -31,7 +31,7 @@ Elm が流行れば，Haskell 人口も増えるに違いない！
 
 ## Elm Tokyo Meetup
 
-第3回以前は[別サイト](https://www.meetup.com/ja-JP/Tokyo-Elm-Programming-Meetup/)で管理されてるみたい．
+~~第3回以前は別サイトで管理されてるみたい．~~ 消しちゃったご様子...
 
 ざっと見た感じ，毎回 Elm に関するプレゼン大会って感じだ．
 1-3回がひと月置きにやって，1年半ほど経ってからの第4回．
@@ -136,7 +136,7 @@ Haskeller でもある気がする．
 
 ##
 
-あと懇親会で，hosomichi さんに Elm アーキテクチャを学ぶ日本語資料として [Elm Tutorial](https://www.elm-tutorial.org/jp/) を教えてもらった(感謝)．
+~あと懇親会で，hosomichi さんに Elm アーキテクチャを学ぶ日本語資料として Elm Tutorial を教えてもらった(感謝)．~ 残念ながら Elm Tutorial はリンク切れっぽいです(今であれば [Elm Guide](https://guide.elm-lang.jp/) がいいはず)．
 Elm アーキテクチャの概念的なことを勉強してみたいのです．
 
 それと，やっぱユーザーが少ないためユースケースで検索しても中々ヒットしないのが，個人的に使っててつらい．

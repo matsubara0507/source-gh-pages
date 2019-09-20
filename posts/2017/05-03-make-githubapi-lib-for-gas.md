@@ -27,7 +27,7 @@ GitHub で日記を書こうと思った．
 
 ググったらすごい良いのがあった．
 
-- [手軽にGoogle Apps ScriptのコードをGithubで管理する | Recruit Jobs TECHBLOG](https://techblog.recruitjobs.net/development/maneged_google-apps-script_by_github)
+- ~~手軽にGoogle Apps ScriptのコードをGithubで管理する | Recruit Jobs TECHBLOG~~ リンク切れ...
 
 本当にすごい便利．
 

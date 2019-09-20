@@ -12,7 +12,7 @@ tags: Haskell, Brainfuck, application
 
 ![](/assets/create-brainfuck-in-haskell/braincup.jpg)
 
-一流のプログラマであれば，Brainf*ck 程度の単純な処理系ぐらい目実行しろってことだろうが，ボクは3流程度のプログラマなので，[ASCIIコード表](http://e-words.jp/p/r-ascii.html)が片手にないと実行できなかった...orz
+一流のプログラマであれば，Brainf*ck 程度の単純な処理系ぐらい目実行しろってことだろうが，ボクは3流程度のプログラマなので，ASCIIコード表が片手にないと実行できなかった...orz
 
 まぁ内容はわかったのだが，せっかくだから久々にサクッと書いてみようと思ったわけです．
 
