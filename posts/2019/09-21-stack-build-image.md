@@ -97,7 +97,7 @@ RUN curl -sSL https://get.haskellstack.org/ | sh \
 
 ### Docker Integration と Resolver
 
-Stack ビルド可能なパッケージのバージョンをまとめた Resolver を提供している．
+Stack はビルド可能なパッケージのバージョンをまとめた Resolver を提供している．
 Resolver は設定ファイルで指定し，Docker Integration でイメージタグを指定しないと Resolver と同じ名前のタグを自動で利用してくれる．
 
 ```yaml
