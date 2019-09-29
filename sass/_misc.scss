@@ -13,6 +13,11 @@ code {
   border-radius: 4px;
   min-width: 800px;
 }
+
+pre {
+  overflow: auto;
+}
+
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
@@ -21,10 +26,6 @@ pre > code {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
-
-pre.code {
-  overflow: auto;
 }
 
 @media (max-width: 550px) {

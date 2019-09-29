@@ -444,6 +444,9 @@ code {
   border-radius: 4px;
   min-width: 800px; }
 
+pre {
+  overflow: auto; }
+
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
@@ -457,9 +460,6 @@ pre > code {
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */ }
-
-pre.code {
-  overflow: auto; }
 
 @media (max-width: 550px) {
   iframe {
