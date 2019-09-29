@@ -1,4 +1,5 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NumericUnderscores #-}
+{-# LANGUAGE OverloadedStrings  #-}
 
 module Main where
 
@@ -34,7 +35,11 @@ scrapeLinks txt = fromMaybe [] $ scrapeStringLike txt scraper
 
 linkStatus :: Text -> IO Status
 linkStatus url = do
-  manager <- newManager tlsManagerSettings
+  manager <- newManager setting
   request <- parseRequest $ unpack url
   responseStatus
     <$> httpNoBody (request { requestHeaders = [("User-Agent", "")] }) manager
+  where
+    setting = tlsManagerSettings
+      { managerResponseTimeout = responseTimeoutMicro 60_000_000
+      }
