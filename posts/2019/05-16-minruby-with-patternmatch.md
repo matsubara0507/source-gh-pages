@@ -38,7 +38,8 @@ end
 
 ちょこちょこ既に記事があるが，RubyKaigi 2019 でも作者からの発表があり参考になる:
 
-<iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fspeakerdeck.com%2Fplayer%2Fa853a73bba9d48ae88860f7c9b068334&url=https%3A%2F%2Fspeakerdeck.com%2Fk_tsj%2Fpattern-matching-new-feature-in-ruby-2-dot-7&image=https%3A%2F%2Fspeakerd.s3.amazonaws.com%2Fpresentations%2Fa853a73bba9d48ae88860f7c9b068334%2Fslide_0.jpg%3F510667&key=internal&type=text%2Fhtml&schema=speakerdeck" width="500" height="299" scrolling="no" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
+- [Pattern matching - New feature in Ruby 2.7
+](https://speakerdeck.com/k_tsj/pattern-matching-new-feature-in-ruby-2-dot-7)
 
 すでに [YouTube で動画も公開された](https://www.youtube.com/watch?v=paBlgsqoKk8)．
 ちなみに，2012 ぐらいからずっと作っていたらしい．
