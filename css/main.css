@@ -41,6 +41,13 @@ html {
   margin: 0; }
 
 /*setting up font sizes and base font family*/
+/* Larger than phablet */
+@media (max-width: 550px) {
+  body {
+    font-size: 2.0em; } }
+@media (min-width: 550px) {
+  body {
+    font-size: 1.5em; } }
 body {
   minheight: 100%;
   width: 100%;
@@ -49,7 +56,6 @@ body {
   background-image: url("../assets/hero.jpg");
   letter-spacing: 0.01em;
   line-height: 1.6;
-  font-size: 1.5em;
   font-weight: 400;
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
