@@ -44,7 +44,7 @@ html {
 /* Larger than phablet */
 @media (max-width: 550px) {
   body {
-    font-size: 2.0em; } }
+    font-size: 2.5em; } }
 @media (min-width: 550px) {
   body {
     font-size: 1.5em; } }
@@ -440,7 +440,6 @@ code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
   font-size: 90%;
-  white-space: nowrap;
   background: #F1F1F1;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
