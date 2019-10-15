@@ -15,7 +15,7 @@ tags: Haskell, extensible-package, rio, library
 
 リポジトリはこれ:
 
-##### <iframe width="426" height="183" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/mix.hs" ></iframe>
+##### <iframe width="320" height="184" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/mix.hs" ></iframe>
 
 mix パッケージの目的は rio パッケージの `RIO env a` モナドの `env` の部分を extensible パッケージを用いて簡単に構築することであり，`env` をプラグインとして構築する．
 プラグインで構築という部分は [tonatona](https://hackage.haskell.org/package/tonatona) から着想を得た(tonatona も rio のラッパーパッケージなはず)．

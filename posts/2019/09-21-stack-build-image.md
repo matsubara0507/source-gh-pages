@@ -122,7 +122,7 @@ docker:
 
 外のソフトウェアのバージョンアップを検知して自分の Docker Image を更新するのって結構大変なんだが，昔同じようなシチュエーションで支援プログラムを作ったのを思い出した:
 
-# <iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/dockwright" ></iframe>
+# <iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/dockwright" ></iframe>
 
 こいつを改良してバージョンを追うことにした．
 

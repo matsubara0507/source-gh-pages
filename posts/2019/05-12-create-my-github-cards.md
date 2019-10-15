@@ -21,7 +21,7 @@ iframe で埋め込むことができます。
 だいたい半日ぐらいかかった．GWの最終日．GW最高．
 リポジトリはこれ:
 
-#### <iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/github-card" ></iframe>
+#### <iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/github-card" ></iframe>
 
 [GitHub Pages に置いた](https://matsubara0507.github.io/github-card)ので誰でも試せる．
 ただし，裏では GitHub API v3 をトークンなしで叩いてる...
@@ -62,9 +62,9 @@ Elm の `Browser.application` の URL 機能を~~わざわざ~~使って色々�
 
 集める部分と表示する部分を分けた:
 
-#### <iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/selfcat" ></iframe>
+#### <iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/selfcat" ></iframe>
 
-#### <iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/my-github-cards" ></iframe>
+#### <iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/my-github-cards" ></iframe>
 
 前回の [matsubara0507/github-card](https://github.com/matsubara0507/github-card) と違い自分専用．
 selfcat という CLI ツールで次のような設定ファイル `.selfcat.yaml` にあるユーザーとリポジトリの情報を収集(GitHub API v3)し，JSON として保存する．

@@ -9,7 +9,7 @@ Elm 側で QR コードのデコードをするわけじゃないので，そう
 
 今回の実装は下記のリポジトリにあります:
 
-#### <iframe width="426" height="183" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/anaqram-web-samples" ></iframe>
+#### <iframe width="320" height="215" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/anaqram-web-samples" ></iframe>
 
 リポジトリの詳細のとこを読むとわかるんですけど，実はこの話は書典7のネタの一部を抜粋したものです(典の方はもっと丁寧に書いてます)．
 

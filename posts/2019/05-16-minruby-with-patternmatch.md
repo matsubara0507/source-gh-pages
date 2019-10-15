@@ -203,7 +203,7 @@ evaluate(tree, genv, lenv)
 
 作業リポジトリはこれ:
 
-<iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/MinRuby.rb" ></iframe>
+<iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/MinRuby.rb" ></iframe>
 
 `pattern-match` というブランチにパターンマッチングで書き換えたコードがある．
 パターンマッチングで書き換えたのは `evaluate` 関数だけなのでそこだけ載せる:

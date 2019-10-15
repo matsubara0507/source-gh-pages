@@ -8,7 +8,7 @@ tags: Drone, Go
 
 ## 作ったもの
 
-<iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/drone-slack-notify-log" ></iframe>
+<iframe width="320" height="163" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/drone-slack-notify-log" ></iframe>
 
 色々調べてみたものの，同じビルド中の別のステップでのログを取得する方法がわからなかった...
 ので，最終手段として Drone API を使って引っ張ってくる方法をとった．

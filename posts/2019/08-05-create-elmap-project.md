@@ -9,7 +9,7 @@ GUI 付きのツールを作成したい時、普段は Elm を使います．
 elm-export は Elm 0.19 に追いつけてなかったので独自にフォークして運用し，また愛用している extensible パッケージにも独自で対応していました．
 しかし，servant-elm が Elm 0.19 に対応するために依存パッケージを elm-export から [elm-bridge](http://hackage.haskell.org/package/elm-bridge) に変更したところ，独自で対応してた部分と色々都合が悪かったので，それらのクッションとなる薄いラッパーパッケージ群として elmap.hs プロジェクトを作成しました:
 
-## <iframe width="426" height="162" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/elmap.hs" ></iframe>
+## <iframe width="320" height="184" scrolling="no" frameborder="0" src="https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/elmap.hs" ></iframe>
 
 この記事は elmap.hs を作る上で色々したことのメモ書きです．
 
