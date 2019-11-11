@@ -4,3 +4,5 @@ _site/
 .sass-cache/
 .draft
 matsubara0507-ghpages.cabal
+.DS_Store
+bin/*
