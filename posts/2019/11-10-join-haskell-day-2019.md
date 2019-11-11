@@ -124,7 +124,7 @@ extensible・Servant・Elm・STM・Dhall など前回・今回の Haskell Day �
 ### 大規模数値計算を支える Haskell ── Pragmatic Haskell in Large-Scale Numerical Computation
 
 [石井](https://github.com/konn)氏の発表．
-内容があれなので写真は最初のスライドだけで，的なこと言ってたのでスライドは公開されないんじゃないかな．
+~~内容があれなので写真は最初のスライドだけで，的なこと言ってたのでスライドは公開されないんじゃないかな~~[公開されました](https://speakerdeck.com/konn/da-gui-mo-shu-zhi-ji-suan-wozhi-eru-haskell-nil-nil-pragmatic-haskell-in-large-scale-numerical-computation-nil-nil)．
 
 GoS2014(?)で ekmett 氏にメンターをしてもらったとのこと．すごい．
 で，発表の内容は社長(?)が前に言っていた「[弊社のプロダクトはモナドで各々知っているべき領域を区分して仕事を分けています。ですので、全部知ってなくても、仕事ができます。](https://twitter.com/hiroki_f/status/1135160082373652480)」というツイートの詳しい話(代弁)．
