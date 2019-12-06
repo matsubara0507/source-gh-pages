@@ -27,7 +27,7 @@ thumbnail: /assets/tapl-with-elm/chap7.jpg
 
 また，前回同様に[Web ブラウザから遊べるようになってます](https://matsubara0507.github.io/ELaMbda/?chap=chap7)．
 
-[![](/assets/tapl-with-elm/chap4.jpg)](https://matsubara0507.github.io/ELaMbda/?chap=chap7&exp=(\x%20.%20x%20x)%20(\x%20.%20x%20x))
+[![](/assets/tapl-with-elm/chap7.jpg)](https://matsubara0507.github.io/ELaMbda/?chap=chap7&exp=(\x%20.%20x%20x)%20(\x%20.%20x%20x))
 
 ## 第7章 ラムダ計算の ML 実装
 
