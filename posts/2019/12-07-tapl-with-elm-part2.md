@@ -9,7 +9,7 @@ thumbnail: /assets/tapl-with-elm/chap7.jpg
 #
 
 表題の通り，TaPL という書籍で紹介されているプログラミング言語の実装例を Elm でやってみたという話です（その２）．
-[その１]()はこちら．
+[その１](https://matsubara0507.github.io/posts/2019-12-06-tapl-with-elm-part1.html)はこちら．
 
 - 第4章 算術式のML実装
 - 第7章 ラムダ計算の ML 実装 (本記事はココ)
