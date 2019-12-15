@@ -797,6 +797,8 @@ h6 {
 
 .post .card-content {
   padding: 80px 20px; }
+  .post .card-content .post-footer {
+    line-height: 5em; }
 
 .footer-heading {
   display: block;
