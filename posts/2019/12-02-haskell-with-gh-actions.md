@@ -97,7 +97,7 @@ $ du -sh ~/.stack/*
 0       /home/runner/.stack/stack.sqlite3.pantry-write-lock
 ```
 
-現在，`actions/cache@v1` では一度にキャッシュできるディレクトリの最大サイズは400MBしかない（今後緩和される可能性はあるが）．
+現在，`actions/cache@v1` では一度にキャッシュできるディレクトリの最大サイズは400MBしかない（~~今後緩和される可能性はあるが~~ [2020年1月7日ごろにリリースされた v1.1.0 より上限が2GBに緩和された](https://github.com/actions/cache/issues/6#issuecomment-571290282)ので、以降の涙ぐましい努力をする必要はなくなった笑）．
 `actions/cache` は内部で gzip かなんかで圧縮しているので，この数字まんまではない．
 試しに，このまんまキャッシュしてみたら次のような警告が出た:
 
