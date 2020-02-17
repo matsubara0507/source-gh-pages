@@ -9,7 +9,9 @@ ghc-options:
 dependencies:
   - base == 4.*
   - extensible
+  - extensible-skeleton
   - microlens
+  - tangle
 
 executables:
   site:
