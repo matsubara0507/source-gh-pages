@@ -56,7 +56,7 @@ run conf = retractEff . flip runReaderDef conf
 
 type FieldI = Field Identity
 
-tangles :: MidFields :& Comp (TangleT (Record' MidFields) RulesM) FieldI
+tangles :: MidFields :& Comp (TangleT (WrapRecord MidFields) RulesM) FieldI
 tangles =
   htabulateFor (Proxy :: Proxy MakeRule) $ \m -> Comp $ Field . pure <$> rule m
 
@@ -64,13 +64,13 @@ makeRules :: RulesM SiteRules
 makeRules =
   shrink <$> evalTangleT
     (htraverseWithIndex (const . hitchAt') initialRecord)
-    (Record' tangles)
-    (Record' $ initialRecord)
+    (WrapRecord tangles)
+    (WrapRecord $ initialRecord)
   where
     initialRecord = hrepeat (Comp Nothing)
 
 class MakeRule kv where
-  rule :: proxy kv -> TangleT (Record' MidFields) RulesM (TargetOf kv)
+  rule :: proxy kv -> TangleT (WrapRecord MidFields) RulesM (TargetOf kv)
 
 liftR :: MonadTrans t => Rules a -> t RulesM a
 liftR = lift . liftEff (Proxy :: Proxy "Rules")
