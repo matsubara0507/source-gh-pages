@@ -25,7 +25,7 @@ thumbnail: /assets/tapl-with-elm/chap10.jpg
 
 また，今まで同様に[Web ブラウザから遊べるようになってます](https://matsubara0507.github.io/ELaMbda/?chap=chap10)．
 
-[![](/assets/tapl-with-elm/chap10.jpg)](http://localhost:8000/docs/index.html?chap=chap10&exp=(\x%20:%20Bool%20.%20if%20x%20then%20x%20else%20(\f%20:%20Bool%20-%3E%20Bool%20-%3E%20Bool%20.%20f%20x%20x)%20(\x%20:%20Bool%20.%20\y%20:%20Bool%20.%20y))%20(if%20true%20then%20false%20else%20true))
+[![](/assets/tapl-with-elm/chap10.jpg)](https://matsubara0507.github.io/ELaMbda/?chap=chap10&exp=(\x%20:%20Bool%20.%20if%20x%20then%20x%20else%20(\f%20:%20Bool%20-%3E%20Bool%20-%3E%20Bool%20.%20f%20x%20x)%20(\x%20:%20Bool%20.%20\y%20:%20Bool%20.%20y))%20(if%20true%20then%20false%20else%20true))
 
 
 ## 第10章 単純型の ML 実装
