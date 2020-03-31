@@ -22,12 +22,14 @@ main = do
     run_ "stack" ["exec", "--", "site", "build"]
     files <- ls "_site/posts"
     traverse (fmap scrapeLinks . readfile) files
-    pure []
   hspec . mapM_ spec . nub . sort $ filter check urls
  where
   check url = not . or . (:) (null url) $ fmap
     (`isPrefixOf` url)
-    ["https://matsubara0507.github.io", "../", "#", "20"]
+    [ "https://matsubara0507.github.io"
+    , "../", "#", "20"
+    , "https://github.com" -- too many requests 対策
+    ]
   spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
 scrapeLinks :: Text -> [Text]
