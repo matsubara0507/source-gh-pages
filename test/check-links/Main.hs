@@ -22,6 +22,7 @@ main = do
     run_ "stack" ["exec", "--", "site", "build"]
     files <- ls "_site/posts"
     traverse (fmap scrapeLinks . readfile) files
+    pure []
   hspec . mapM_ spec . nub . sort $ filter check urls
  where
   check url = not . or . (:) (null url) $ fmap
