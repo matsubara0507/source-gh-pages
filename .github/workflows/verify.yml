@@ -37,5 +37,5 @@ jobs:
     - name: Install dependencies
       run: stack --system-ghc test --only-dependencies
 
-    # - name: Run test
-    #   run: stack --system-ghc --no-terminal test --no-run-benchmarks --no-haddock-deps
+    - name: Run test
+      run: stack --system-ghc --no-terminal test --no-run-benchmarks --no-haddock-deps
