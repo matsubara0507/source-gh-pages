@@ -101,7 +101,7 @@ $ docker images | grep haskell
 haskell             latest              198e758a94f7        8 days ago          961.1 MB
 ```
 
-Haskell の[公式のDockerfile](https://github.com/freebroccolo/docker-haskell/blob/5f1ae82bd27501322100b915c9ae6cc9f9aea129/8.0/Dockerfile) を見ると，GHC を直接入れて，stack の global config yaml の `system-ghc` のオプションを `true` にしている．
+Haskell の[公式のDockerfile](https://github.com/haskell/docker-haskell/blob/5f1ae82bd27501322100b915c9ae6cc9f9aea129/8.0/Dockerfile) を見ると，GHC を直接入れて，stack の global config yaml の `system-ghc` のオプションを `true` にしている．
 こうすることで，`stack ghc` や `stack ghci` などがカレントディレクトリに config yaml が無い場合に，インストール済みの GHC を使ってくれる．
 
 なるほど，こうしよう．

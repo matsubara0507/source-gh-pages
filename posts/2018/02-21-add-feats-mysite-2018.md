@@ -98,7 +98,7 @@ HTTPクライアントには [`http-client`](https://hackage.haskell.org/package
 かなーーり古い LTS だとうまくいくので，仕方なくそれを使っていたのだが直すことにした．
 というか知り合いが直し方を記事にしてくれてたのでやってみた．
 
-- [travis-ci の初回ビルドで OUT OF MEMORY が出た時の対処法](https://haskell.e-bigmoon.com/posts/2017-12-31-travis-out-of-memory.html)
+- [travis-ci の初回ビルドで OUT OF MEMORY が出た時の対処法](https://haskell.e-bigmoon.com/posts/2017/12-31-travis-out-of-memory.html)
 
 戦犯は `Cabal` パッケージなので，こいつだけ先に `-j 1` オプション(メモリを節約するが速度が遅い)でビルドしてしまうという戦略．
 この記事のサイトの [`.travis.yml`](https://github.com/e-bigmoon/haskell-blog/blob/a229f118f121e0ad843faae1412e938e3e4f3a6b/.travis.yml) を ~~コピペ~~ 参考にして次のようにした
@@ -269,11 +269,11 @@ sortByM f = fmap (map fst . sortBy (comparing snd)) . mapM (fmap <$> (,) <*> f)
 
 ## フィード・ページネーション・タグ
 
-実はフィード生成・ページネーション・タグは，もとから Hakyll で提供されている機能だ．
-どれもこの記事に日本語で書いてある．
+~~実はフィード生成・ページネーション・タグは，もとから Hakyll で提供されている機能だ．
+どれもこの記事に日本語で書いてある．~~ 残念ながらリンクが死んでた...
 
-- [Hakyllでブログを作る(実践編2) - Wake up! Good night*](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part2.html)
-- [Hakyllでブログを作る(実践編3) - Wake up! Good night*](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part3.html)
+- ~~Hakyllでブログを作る(実践編2) - Wake up! Good night*~~
+- ~~Hakyllでブログを作る(実践編3) - Wake up! Good night*~~
 
 だが躓きポイントはいくつかあった(だいたい日時のやつだけど...)．
 
@@ -357,7 +357,8 @@ instance ToContext a => ToContext (Identity a) where
 
 ### ページネーションを追加
 
-[参考記事](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part2.html#%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)の中で使われている `sortRecentFirst` も日時を取得しているので書き換える．
+~~参考記事~~ の中で使われている `sortRecentFirst` も日時を取得しているので書き換える．
+参考記事は残念ながらリンク切れになってしまった．
 
 ```Haskell
 sortRecentFirst' :: MonadMetadata m => [Identifier] -> m [Identifier]

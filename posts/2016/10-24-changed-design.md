@@ -188,7 +188,8 @@ print_hi('Tom')
 ```
 
 仕方がないので， パッケージを使うことにした．
-このやり方は [このページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html#シンタックスハイライト) を参照した．
+このやり方は ~~このページ~~ を参照した．
+残念ながら参考先のリンクが切れてしまった...
 
 ```haskell
 create ["css/highlight.css"] $ do
