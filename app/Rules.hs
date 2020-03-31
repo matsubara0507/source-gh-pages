@@ -1,26 +1,26 @@
-{-# LANGUAGE DataKinds             #-}
-{-# LANGUAGE FlexibleInstances     #-}
-{-# LANGUAGE MonoLocalBinds        #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE OverloadedLabels      #-}
-{-# LANGUAGE OverloadedStrings     #-}
-{-# LANGUAGE PolyKinds             #-}
-{-# LANGUAGE RankNTypes            #-}
-{-# LANGUAGE TypeOperators         #-}
+{-# LANGUAGE BlockArguments    #-}
+{-# LANGUAGE DataKinds         #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE OverloadedLabels  #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE PolyKinds         #-}
+{-# LANGUAGE TypeOperators     #-}
 
 module Rules where
 
 import           Config
 import           Control.Monad.Reader
-import           Data.Extensible                hiding (match)
+import           Control.Monad.Tangle
+import           Data.Extensible                hiding (TangleT, evalTangleT,
+                                                 match)
+import           Data.Extensible.Effect
 import           Data.Extensible.Effect.Default
 import           Data.Maybe                     (fromMaybe)
-import           Data.Monoid                    ((<>))
-import           Data.Proxy                     (Proxy (..))
 import           Hakyll                         hiding (dateFieldWith)
 import           Hakyll.Ext
 import           Skylighting                    (pygments, styleToCss)
 import           System.FilePath
+import           Tangle
 import           Text.HTML.Scalpel.Core         ((@:))
 import qualified Text.HTML.Scalpel.Core         as S
 
@@ -56,15 +56,21 @@ run conf = retractEff . flip runReaderDef conf
 
 type FieldI = Field Identity
 
-tangles :: MidFields :& Comp (TangleT MidFields FieldI RulesM) FieldI
+tangles :: MidFields :& Comp (TangleT (WrapRecord MidFields) RulesM) FieldI
 tangles =
   htabulateFor (Proxy :: Proxy MakeRule) $ \m -> Comp $ Field . pure <$> rule m
 
 makeRules :: RulesM SiteRules
-makeRules = shrink <$> runTangles tangles (wrench emptyRecord)
+makeRules =
+  shrink <$> evalTangleT
+    (htraverseWithIndex (const . hitchAt') initialRecord)
+    (WrapRecord tangles)
+    (WrapRecord $ initialRecord)
+  where
+    initialRecord = hrepeat (Comp Nothing)
 
 class MakeRule kv where
-  rule :: proxy kv -> TangleT MidFields FieldI RulesM (TargetOf kv)
+  rule :: proxy kv -> TangleT (WrapRecord MidFields) RulesM (TargetOf kv)
 
 liftR :: MonadTrans t => Rules a -> t RulesM a
 liftR = lift . liftEff (Proxy :: Proxy "Rules")
@@ -76,7 +82,7 @@ instance MakeRule ("tags'" >: Tags) where
   rule _ = liftR $ buildTags "posts/*/*" (fromCapture "tags/*.html")
 
 instance MakeRule ("postCtx" >: Context String) where
-  rule _ = postCtx <$> lasso #tags'
+  rule _ = postCtx <$> lasso' #tags'
 
 instance MakeRule ("templates" >: ()) where
   rule _ =
@@ -99,7 +105,7 @@ instance MakeRule ("css" >: ()) where
 
 instance MakeRule ("tags" >: ()) where
   rule _ = do
-    (_, tags)           <- lasso2 (#templates, #tags')
+    (_, tags)          <- lasso2 (#templates, #tags')
     (siteCtx, postCtx') <- lasso2 (#siteCtx, #postCtx)
     liftR . tagsRules tags $ \tag pat -> do
       route idRoute
@@ -117,7 +123,7 @@ instance MakeRule ("tags" >: ()) where
 
 instance MakeRule ("posts" >: ()) where
   rule _ = do
-    lasso #templates
+    lasso' #templates
     (siteCtx, postCtx') <- lasso2 (#siteCtx, #postCtx)
     liftR . match "posts/*/*" $ do
       route $ composeRoutes
@@ -142,7 +148,7 @@ instance MakeRule ("about" >: ()) where
 
 instance MakeRule ("archives" >: ()) where
   rule _ = do
-    lasso #templates
+    lasso' #templates
     (siteCtx, postCtx') <- lasso2 (#siteCtx, #postCtx)
     archive  <- liftR $ buildPaginateWith
       (fmap (paginateEvery 10) . sortRecentFirst')
@@ -187,7 +193,7 @@ instance MakeRule ("index" >: ()) where
 
 instance MakeRule ("sitemap" >: ()) where
   rule _ = do
-    lasso #templates
+    lasso' #templates
     (siteCtx, postCtx') <- lasso2 (#siteCtx, #postCtx)
     liftR . create ["sitemap.xml"] $ do
       route idRoute
@@ -248,10 +254,3 @@ scrapePostContent :: String -> String
 scrapePostContent str =
   fromMaybe "" $
     S.scrapeStringLike str (S.html $ "div" @: [S.hasClass "post-content"])
-
-lasso2
-  :: forall k1 k2 v1 v2 m h xs
-   . (Monad m, Lookup xs k1 v1, Lookup xs k2 v2, Wrapper h)
-  => (FieldName k1, FieldName k2)
-  -> TangleT xs h m (Repr h (k1 >: v1), Repr h (k2 >: v2))
-lasso2 (k1, k2) = (,) <$> lasso k1 <*> lasso k2

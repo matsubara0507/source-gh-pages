@@ -5,12 +5,19 @@
 
 packages:
 - completed:
-    hackage: extensible-0.6.1@sha256:d73a5dc13bd00f44ace729f83ce868e81a45ea31c7453a6f8a4a9b5b0591d600,2860
+    hackage: extensible-0.7.1@sha256:feee1d0109e716075a72334a02086b4969cd52537661ffb5fd959ce5f9c01e25,2894
     pantry-tree:
-      size: 2354
-      sha256: 9fadd24af89df601f19d57893b513d1742a1942670d6d2e73e79fb4b7aabce65
+      size: 2097
+      sha256: 0074e55cf4bdd916bb157137f580560d589d18d0e88e0b2b85f8a3239aaacf5d
   original:
-    hackage: extensible-0.6.1
+    hackage: extensible-0.7.1
+- completed:
+    hackage: extensible-skeleton-0@sha256:58473b1dbed6fe4dea07bff27d8e899404c03ddbcdd8ce338cf92c29d39871a2,1446
+    pantry-tree:
+      size: 441
+      sha256: e7fd2d42784808415558f54c66450ae60d547c66b7c5349ddd942078a3c2bbae
+  original:
+    hackage: extensible-skeleton-0
 - completed:
     hackage: membership-0@sha256:3a11d8fd53cb1a76bb9273e6c929bbf9d649f109714bf487abb3143be04ddc81,995
     pantry-tree:
@@ -19,15 +26,29 @@ packages:
   original:
     hackage: membership-0
 - completed:
-    hackage: hakyll-4.13.0.1@sha256:0f27d74feaedc96648ec5377ecec2b35dd677516c9667d179462a350f2075628,8817
+    hackage: tangle-0@sha256:bbe74b5640adf321f9e487d2d1397a9593a1a0b9ee75793049ce3c9a4ad77734,974
     pantry-tree:
-      size: 7841
-      sha256: 4a4409d287ee3daabb0141e3ebd3d2e88ead7382ba5cc582733907b4a938c4a8
+      size: 269
+      sha256: 19e9a538cb9e1efbb255de17cbb32a8103c0c6e44a5cb36d312b76d482deb743
   original:
-    hackage: hakyll-4.13.0.1
+    hackage: tangle-0
+- completed:
+    size: 364640
+    url: https://github.com/matsubara0507/hakyll/archive/b2b5007c89d0fe51afbcd73cfa8560ff370d1222.tar.gz
+    cabal-file:
+      size: 8819
+      sha256: 477fae700e5366ce5fedb457382188663355df35d411a9a17d4767c53646be10
+    name: hakyll
+    version: 4.13.0.1
+    sha256: cd32c48fdea9f474f71a2aa3c6b216a9dec780ce843debc988485324a45b912a
+    pantry-tree:
+      size: 11660
+      sha256: e05307a4509f4272809caf2eeeeb754d3aa0387c01eea953139648ac34ceb11e
+  original:
+    url: https://github.com/matsubara0507/hakyll/archive/b2b5007c89d0fe51afbcd73cfa8560ff370d1222.tar.gz
 snapshots:
 - completed:
-    size: 525663
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/14.yaml
-    sha256: 6edc48df46eb8bf7b861e98dd30d021a92c2e1820c9bb6528aac5d997b0e14ef
-  original: lts-14.14
+    size: 488576
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/15/0.yaml
+    sha256: e4b6a87b47ec1cf63a7f1a0884a3b276fce2b0d174a10e8753c4f618e7983568
+  original: lts-15.0
