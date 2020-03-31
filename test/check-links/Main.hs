@@ -8,7 +8,6 @@ import           Prelude                   hiding (FilePath, null)
 import           Data.List                 (nub, sort)
 import           Data.Maybe                (fromMaybe)
 import           Data.Text                 (Text, isPrefixOf, null, unpack)
-import           Data.Traversable          (traverse)
 import           Network.HTTP.Client
 import           Network.HTTP.Client.TLS
 import           Network.HTTP.Types.Status (Status, ok200)
@@ -28,7 +27,9 @@ main = do
     (`isPrefixOf` url)
     [ "https://matsubara0507.github.io"
     , "../", "#", "20"
-    , "https://github.com" -- too many requests 対策
+    , "https://github.com"        -- too many requests 対策
+    , "https://www.cis.upenn.edu" -- 時々 409 になる
+    , "https://www.fun-mooc.fr"   -- 重い
     ]
   spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
