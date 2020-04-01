@@ -30,6 +30,7 @@ main = do
     , "https://github.com"        -- too many requests 対策
     , "https://www.cis.upenn.edu" -- 時々 409 になる
     , "https://www.fun-mooc.fr"   -- 重い
+    , "http://www.smlnj.org"     -- 重い
     ]
   spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
