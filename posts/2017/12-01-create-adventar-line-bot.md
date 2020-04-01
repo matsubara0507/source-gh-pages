@@ -137,7 +137,6 @@ React.js のような動的な DOM を生成するタイプは普通の HTTP リ
 
 ちゃんと API のバージョンアップも追っていた．
 流石中の人製(笑)
-いっそのこと[公式の一覧](https://developers.line.me/ja/docs/messaging-api/reference/)にも書けばいいのに．
 
 ##
 

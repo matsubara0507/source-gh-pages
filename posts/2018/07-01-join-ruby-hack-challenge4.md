@@ -53,7 +53,7 @@ Ruby のテストカバレッジは Web から確認できる．
 
 ##
 
-ちなみに，[ココ](https://github.com/ruby/ruby/blob/trunk/doc/maintainers.rdoc)を見ると誰がメンテナーで，どこに報告すれば良いかが書いてある．
+ちなみに，[ココ](https://github.com/ruby/ruby/blob/master/doc/maintainers.rdoc)を見ると誰がメンテナーで，どこに報告すれば良いかが書いてある．
 
 ### 環境構築
 

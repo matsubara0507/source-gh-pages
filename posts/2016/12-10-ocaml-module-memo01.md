@@ -245,7 +245,7 @@ module NatI =
 ## 参考
 
 - [OCaml の公式サイトのチュートリアル | モジュール – OCaml](https://ocaml.org/learn/tutorials/modules.ja.html)
-- [Real World OCaml の Web 版 | Chapter 9. Functors](https://realworldocaml.org/v1/en/html/functors.html)
+- Real World OCaml の Web 版 | Chapter 9. Functors (なんかリンクが変だったので消した...)
 - [入門OCaml ～プログラミング基礎と実践理解](https://book.mynavi.jp/support/bookmook/ocaml/)
 
 ## おしまい

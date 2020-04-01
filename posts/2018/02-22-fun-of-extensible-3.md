@@ -174,7 +174,7 @@ header = LB.intercalate "," . fmap fromString $ henumerateFor
 そこで，カスタムスナップショットだ．
 日本語で詳しくは下記のサイトにまとまっていた．
 
-- [カスタムスナップショットの紹介](https://haskell.e-bigmoon.com/posts/2017-12-23-stack161.html)
+- [カスタムスナップショットの紹介](https://haskell.e-bigmoon.com/posts/2017/12-23-stack161.html)
 
 ここには書いてないが，カスタムスナップショットは `stack script` にも使える．
 例えば今回は次のようなカスタムスナップショットを作った．

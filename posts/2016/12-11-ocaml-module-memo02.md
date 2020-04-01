@@ -5,7 +5,7 @@ tags: OCaml
 
 表題の通り，OCaml のモジュールシステムについてのメモ．
 
-ファーストクラスモジュールを学ぶために，[Web版 Real World OCaml の Chapter 10.](https://realworldocaml.org/v1/en/html/first-class-modules.html) を全訳．
+ファーストクラスモジュールを学ぶために，Web版 Real World OCaml の Chapter 10. を全訳（なんかリンクが変だったので消した...）．
 
 英語はザコなのでかなり意訳だと思われ．
 

@@ -10,7 +10,6 @@ import           Data.Extensible
 import           Data.Functor.Identity (Identity (..))
 import           Data.Map              (Map, foldMapWithKey)
 import           Data.Yaml             (decodeFileEither)
-import           GHC.TypeLits          (KnownSymbol)
 import           Hakyll
 import           Lens.Micro
 

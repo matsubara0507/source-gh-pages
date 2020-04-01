@@ -61,7 +61,7 @@ tags: Elixir, event
 - 不必要なプロセスやその監視プロセスが微妙に残ってじわじわ CPU 使用率が上がってしまった
 - [Erlang in Anger](https://www.erlang-in-anger.com/) を絶対に読む
     - 運用に役立ちそうなことがたくさん書いてある
-- [Erlang の Slack ワークスペース](https://erlang-slack.herokuapp.com/)がおススメ！
+- ~~Erlang の Slack ワークスペースがおススメ！~~ リンクが死んだ
     - 紹介した監視の VMStats もここで教えてもらった
 
 思想の記事が多い話，なんとなく Haskell にも似たようなところがあって笑った
@@ -183,7 +183,7 @@ mix すごいのはよくわかる．
 #### 任意のBEAM系言語でプラグインを書ける安定したフレームワークの作りかた
 
 - [niku](https://github.com/niku) 氏の発表
-- [発表スライドはコチラ](https://niku.name/2018/06/16/slide.html)
+- ~~発表スライドはコチラ~~リンク切れ
 - BEAM系プラグインを作る上でのノウハウ
 - また PubSub の話ですいません
 - フレームワークとプラグイン
