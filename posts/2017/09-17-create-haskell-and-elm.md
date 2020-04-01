@@ -6,7 +6,7 @@ tags: Haskell, Elm, application
 
 Haskell と Elm を使った Web アプリケーションのサンプルコードを書いてみたので，それについてイロイロとメモ書き．
 
-最終的なコードは[こちら](https://github.com/matsubara0507/haskell-and-elm)．
+最終的なコードは[こちら](https://github.com/matsubara0507/haskell-and-elm/tree/v0.1.0)．
 
 ## いきさつ
 
