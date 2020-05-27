@@ -17,7 +17,7 @@ Elm から Elixir のトランスパイラ，[Elchemy](https://github.com/wende/
 
 Elchemy は，Elixir の強力なエコシステムと Elm の型安全によって，より簡潔に高速に高品質で型安全なコードを記述するために作られた処理系です．
 
-- [Elchemy のオンライン環境](http://elchemy.neontree.pl)
+- ~~Elchemy のオンライン環境~~リンクが死んでた
 - [Elchemy の公式ドキュメント](https://wende.gitbooks.io/elchemy/content/)
 - [Elchemy のチュートリアル](https://hackernoon.com/elmchemy-write-type-safe-elixir-code-with-elms-syntax-part-1-introduction-8968b76d721d) (今のところ Part1 と Part2 がある)
 

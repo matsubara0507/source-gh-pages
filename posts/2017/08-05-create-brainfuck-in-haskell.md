@@ -7,7 +7,7 @@ tags: Haskell, Brainfuck, application
 
 ## いきさつ
 
-先日，[builderscon in tokyo 2017](https://builderscon.io/tokyo/2017) というイベントに行ってきた．
+先日，builderscon in tokyo 2017 というイベントに行ってきた．
 そこのフリードリンクコーナーにこんな紙コップが...
 
 ![](/assets/create-brainfuck-in-haskell/braincup.jpg)
