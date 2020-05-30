@@ -45,7 +45,7 @@ image:
 > Remove the stack image command. With the advent of Docker multistage builds, this functionality is no longer useful. For an example, please see Building Haskell Apps with Docker.
 
 マルチステージビルドができたし，あんまりこれもう便利じゃないよね，とのこと．
-代わりに「[Building Haskell Apps with Docker](https://www.fpcomplete.com/blog/2017/12/building-haskell-apps-with-docker)」という記事を読むと良いらしい．
+代わりに「[Building Haskell Apps with Docker](https://fpcomplete.com/building-haskell-apps-with-docker)」という記事を読むと良いらしい．
 
 ## マルチステージビルドする
 
