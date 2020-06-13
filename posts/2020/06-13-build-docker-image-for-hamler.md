@@ -5,6 +5,7 @@ tags: Haskell, Docker, Erlang
 
 [Hamler](https://www.hamler-lang.org/) という ErlangVM 上で動作する Haskell に似た構文のプログラミング言語が公開された．
 手元で遊ぶためにまず，Docker イメージを作ってみることにした（brew したくなかった）．
+[作成したイメージはココ](https://hub.docker.com/repository/docker/matsubara0507/hamler)で[リポジトリはココ](https://github.com/matsubara0507/docker-hamler)．
 
 ちなみに，今回利用するバージョンは `0.1` です．
 
