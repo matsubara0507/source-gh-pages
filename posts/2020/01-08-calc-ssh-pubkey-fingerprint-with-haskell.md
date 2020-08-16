@@ -78,7 +78,7 @@ decode body =
 ### MD5 ハッシュ化
 
 上述の通り，cryptonite というのを用いる．
-ちなみにこれらのパッケージについては [Cryptographic Hashing in Haskell - FPComplete](https://fpcomplete.com/cryptographic-hashing-in-haskell) で紹介されてる([邦訳記事](https://haskell.e-bigmoon.com/posts/2017/09-18-cryptographic-hashing-haskell.html))．
+ちなみにこれらのパッケージについては [Cryptographic Hashing in Haskell - FPComplete](https://www.fpcomplete.com/blog/2017/09/cryptographic-hashing-haskell/) で紹介されてる([邦訳記事](https://haskell.e-bigmoon.com/posts/2017/09-18-cryptographic-hashing-haskell.html))．
 2017年と少し古い記事だが，このパッケージは今でも精力的にメンテナンスがされており，また個人ではなくチーム([Haskell Crypto](https://github.com/haskell-crypto))で管理している点から信頼できるかなと考えた（暗号系のパッケージは結構シビアだから）．
 
 このパッケージで何らかのハッシュ関数を利用するには `Crypto.Hash.hash` 関数を利用すれば良い．

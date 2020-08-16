@@ -18,7 +18,7 @@ TravisCI のログを見てみる:
 
 `1571.75s` もかかってるのは依存パッケージのみをビルドしているステップだ．
 現状の主原因は単純に Haskell Stack のビルドがゲキオモなせい(巷でもよく言われてる)．
-でもこれは初回だけで，Stack v2 からは [Pantry](https://fpcomplete.com/pantry-part-3-specifying-dependencies) というシステムを導入して効率よく依存パッケージを SQLite にキャッシュしている(2回目以降でキャッシュを使うのは v1 もだったが v2 からは別のプロジェクトでも共有できるようになった)．
+でもこれは初回だけで，Stack v2 からは [Pantry](https://www.fpcomplete.com/blog/2018/08/pantry-part-3/specifying-dependencies/) というシステムを導入して効率よく依存パッケージを SQLite にキャッシュしている(2回目以降でキャッシュを使うのは v1 もだったが v2 からは別のプロジェクトでも共有できるようになった)．
 なので，TravisCI にうまくキャッシュをする設定をすることで CI 中のビルド時間は劇的に改善する:
 
 ```yaml

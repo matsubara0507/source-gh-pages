@@ -15,7 +15,7 @@ tags: Haskell, rio
 
 もともとはビルドツール Stack を作成するために考えたデザインパターンをまとめたものっぽい．
 
-- [The RIO Monad](https://fpcomplete.com/the-rio-monad)
+- [The RIO Monad](https://www.fpcomplete.com/blog/2017/07/the-rio-monad/)
 
 `rio` ライブラリの README にはライブラリのゴール・目的の他に(彼らにとっての)ベストプラクティスが書いてある(`rio` 自体がそれに則って作られてる)．
 ここには翻訳というより，README の各項目の要約を記述する．

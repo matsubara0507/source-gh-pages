@@ -33,7 +33,7 @@ Ruby は好きです．
     - [Hamamatsu.rb](http://hamamatsu-rb.github.io/)
         - ここから 1.5 h
         - 近いね！
-    - [Ruby Friends](http://rubyfriends.com/)
+    - Ruby Friends
         - Rubyの勉強会やらカンファレンスやらの写真を投稿するサイト
         - **みんな Ruby が得意なフレンズなんだ！**
         - 今写真撮って投稿
