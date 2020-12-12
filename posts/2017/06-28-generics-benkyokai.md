@@ -86,7 +86,7 @@ tags: event
 内容は2部構成(？)だった．
 前半は「ジェネリクスプログラミングとはなにか」というモノ．
 きっと，トップバッター **だった** ので，導入的な内容にしてくれたのだろう．
-後半は [JJUG-CCC 2016 Fall](http://www.java-users.jp/ccc2016fall/) でのスライドを用いて(時間の許す限り)掻い摘んでイロイロと話してくれた．
+後半は [JJUG-CCC 2016 Fall](https://www.java-users.jp/ccc2016fall/) でのスライドを用いて(時間の許す限り)掻い摘んでイロイロと話してくれた．
 
 ![](/assets/generics-benkyokai/jjug-ccc-nagise.jpg)
 

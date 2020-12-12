@@ -146,7 +146,7 @@ echo replyToken content = do
 ```
 
 LINE Bot に webhook するためにはシークレットキーが必要で，API を叩くためにはAPIトークンが必要．
-どちらも，環境変数から取ってきたかったので `loohupEnv` で取ってきている．
+どちらも，環境変数から取ってきたかったので `lookupEnv` で取ってきている．
 エラー処理も何もしていないので，改善の余地ありですね．
 `ChannelSecret` 型も `ChannelAccessToken` 型も一般的な `Text` 型(lineライブラリには別の意味の `Text` 型があるので注意)のエイリアスなので，`T.pack` して変換してる．
 
@@ -154,7 +154,7 @@ LINE Bot に webhook するためにはシークレットキーが必要で，AP
 
 ### Bot の準備
 
-[LINE Bot のアカウント](https://business.line.me/ja/services/bot)の取得と [Heroku アプリ](https://www.heroku.com/)を作成．
+LINE Bot のアカウントの取得と [Heroku アプリ](https://www.heroku.com/)を作成．
 それぞれ公式サイトでカチカチやってればできるはず(ないしはググれば腐るほど出てくる)．
 
 カチカチして Heroku アプリを作った場合は，まずはリポジトリにリモート設定する．
