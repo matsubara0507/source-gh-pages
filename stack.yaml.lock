@@ -5,12 +5,12 @@
 
 packages:
 - completed:
-    hackage: extensible-0.7.1@sha256:feee1d0109e716075a72334a02086b4969cd52537661ffb5fd959ce5f9c01e25,2894
+    hackage: extensible-0.8@sha256:45ca089909ae434329e4d05dc557be94ff04f24c43ff9b915bd90c0599c83211,2911
     pantry-tree:
       size: 2097
-      sha256: 0074e55cf4bdd916bb157137f580560d589d18d0e88e0b2b85f8a3239aaacf5d
+      sha256: d602c9d623afd9186a4d55898ef97f0dfb7f81ffbd5bae86e2238b3694d702fb
   original:
-    hackage: extensible-0.7.1
+    hackage: extensible-0.8
 - completed:
     hackage: extensible-skeleton-0@sha256:58473b1dbed6fe4dea07bff27d8e899404c03ddbcdd8ce338cf92c29d39871a2,1446
     pantry-tree:
@@ -32,23 +32,9 @@ packages:
       sha256: 19e9a538cb9e1efbb255de17cbb32a8103c0c6e44a5cb36d312b76d482deb743
   original:
     hackage: tangle-0
-- completed:
-    size: 364640
-    url: https://github.com/matsubara0507/hakyll/archive/b2b5007c89d0fe51afbcd73cfa8560ff370d1222.tar.gz
-    cabal-file:
-      size: 8819
-      sha256: 477fae700e5366ce5fedb457382188663355df35d411a9a17d4767c53646be10
-    name: hakyll
-    version: 4.13.0.1
-    sha256: cd32c48fdea9f474f71a2aa3c6b216a9dec780ce843debc988485324a45b912a
-    pantry-tree:
-      size: 11660
-      sha256: e05307a4509f4272809caf2eeeeb754d3aa0387c01eea953139648ac34ceb11e
-  original:
-    url: https://github.com/matsubara0507/hakyll/archive/b2b5007c89d0fe51afbcd73cfa8560ff370d1222.tar.gz
 snapshots:
 - completed:
-    size: 491372
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/15/5.yaml
-    sha256: 1b549cfff328040c382a70a84a2087aac8dab6d778bf92f32a93a771a1980dfc
-  original: lts-15.5
+    size: 533252
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/16/25.yaml
+    sha256: 147598b98bdd95ec0409bac125a4f1bff3cd4f8d73334d283d098f66a4bcc053
+  original: lts-16.25
