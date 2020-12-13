@@ -27,7 +27,7 @@ jobs:
           ${{ runner.os }}-stack-
 
     - name: Setup Haskell
-      uses: haskell/actions/setup@main
+      uses: haskell/actions/setup@v1
       with:
         ghc-version: ${{ matrix.ghc }}
         enable-stack: true
