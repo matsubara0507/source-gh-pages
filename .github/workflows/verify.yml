@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        ghc: ["8.8.3"]
+        ghc: ["8.8.4"]
     steps:
     - uses: actions/checkout@v2
       with:
@@ -27,7 +27,7 @@ jobs:
           ${{ runner.os }}-stack-
 
     - name: Setup Haskell
-      uses: haskell/actions/setup@main
+      uses: haskell/actions/setup@v1
       with:
         ghc-version: ${{ matrix.ghc }}
         enable-stack: true

@@ -1,13 +1,11 @@
-resolver: lts-15.5
+resolver: lts-16.25
 packages:
 - '.'
 extra-deps:
-- extensible-0.7.1
+- extensible-0.8
 - extensible-skeleton-0
 - membership-0
 - tangle-0
-- github: matsubara0507/hakyll
-  commit: b2b5007c89d0fe51afbcd73cfa8560ff370d1222
 
 docker:
   repo: matsubara0507/stack-build
