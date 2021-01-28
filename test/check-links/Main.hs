@@ -33,6 +33,7 @@ main = do
     , "https://www.fun-mooc.fr"   -- 重い
     , "http://www.smlnj.org"      -- 重い
     , "https://www.java-users.jp" -- なんか404になる
+    , "https://twitter.com"       -- 400 になる
     ]
   spec url = it (unpack url) $ linkStatus url `shouldReturn` ok200
 
