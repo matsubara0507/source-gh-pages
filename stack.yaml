@@ -1,11 +1,24 @@
-resolver: lts-16.25
+resolver: lts-17.0
 packages:
 - '.'
 extra-deps:
-- extensible-0.8
+- extensible-0.8.1
 - extensible-skeleton-0
 - membership-0
+- incremental-0.3.1
 - tangle-0
+- hakyll-4.13.4.1
+- pandoc-2.10.1
+- pandoc-citeproc-0.17.0.2
+- commonmark-0.1.1.3
+- commonmark-extensions-0.2.0.4
+- commonmark-pandoc-0.2.0.1
+- doctemplates-0.8.3
+- hslua-1.1.2
+- hslua-module-text-0.2.1
+- pandoc-types-1.21
+- skylighting-0.8.5
+- skylighting-core-0.8.5
 
 docker:
   repo: matsubara0507/stack-build
