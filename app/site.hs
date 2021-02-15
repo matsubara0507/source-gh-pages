@@ -11,8 +11,8 @@ cmdConfig :: Configuration
 cmdConfig = defaultConfiguration
   { deployCommand = mconcat
     [ "cd .site"
-    , "&& rsync -a --filter='P .git/' --filter='P .gitignore'"
-    , " --delete-excluded ../_site/ ."
+    , "&& rm -rfd archive assets css posts tags about.html feed.xml index.html sitemap.xml"
+    , "&& cp -r ../_site/* ."
     , "&& git checkout master"
     , "&& git add -A"
     , "&& git commit -m 'Publish'"
