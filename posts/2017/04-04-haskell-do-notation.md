@@ -138,7 +138,7 @@ Ok, modules loaded: Test1.
 ## ちなみに
 
 - [haskell - Do notation without monads: possible? - Stack Overflow](http://stackoverflow.com/questions/6433703/do-notation-without-monads-possible)
-- [9.3.15. Rebindable syntax and the implicit Prelude import -- Glasgow Haskell Compiler <release> Users Guide](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#rebindable-syntax-and-the-implicit-prelude-import)
+- [9.3.15. Rebindable syntax and the implicit Prelude import -- Glasgow Haskell Compiler <release> Users Guide](https://downloads.haskell.org/~ghc/8.0.1/docs/html/users_guide/glasgow_exts.html#rebindable-syntax-and-the-implicit-prelude-import)
 
 >“Do” notation is translated using whatever functions (>>=), (>>), and fail, are in scope (not the Prelude versions).
 
